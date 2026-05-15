@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """
-官公庁RSSフィード取得スクリプト（v4）
-- 情報源拡充: 首相官邸/デジタル庁/内閣府/公取委/中企庁 追加
-- キーワード拡充: AI/生成AI/地政学/サイバー/半導体 等
-- 補充ロジック改善: 完全無関係なノイズは補充対象外
+官公庁RSSフィード取得スクリプト（v5）
+- 情報源拡充: 外務省/総務省/中小企業庁/金融庁/特許庁/国税庁 追加
+- 特許・知財キーワード追加
+- 公共データ利用規約に基づく利用（出典明記）
 """
 import json
 import os
@@ -15,16 +15,26 @@ import urllib.request
 import xml.etree.ElementTree as ET
 
 RSS_FEEDS = [
-    # 官邸・内閣系（最重要・無条件採用）
+    # 官邸・内閣系（無条件採用）
     {"source": "kantei",  "name": "首相官邸",     "url": "https://www.kantei.go.jp/index.rdf",          "filter": False},
     {"source": "cao",     "name": "内閣府",       "url": "https://www.cao.go.jp/news.rdf",              "filter": False},
     {"source": "digital", "name": "デジタル庁",   "url": "https://www.digital.go.jp/rss/posts",         "filter": False},
-    # 経済・産業系
+    # 外交・地政学
+    {"source": "mofa",    "name": "外務省",       "url": "https://www.mofa.go.jp/mofaj/rss/news.xml",   "filter": False},
+    # 経済・産業
     {"source": "meti",    "name": "経済産業省",   "url": "https://www.meti.go.jp/ml_index_release.rdf", "filter": False},
+    {"source": "chusho",  "name": "中小企業庁",   "url": "https://www.chusho.meti.go.jp/whatsnew.rdf",  "filter": False},
+    {"source": "jpo",     "name": "特許庁",       "url": "https://www.jpo.go.jp/index.rdf",             "filter": False},
     {"source": "maff",    "name": "農林水産省",   "url": "https://www.maff.go.jp/j/rss/press.xml",      "filter": False},
+    # 財政・金融
     {"source": "mof",     "name": "財務省",       "url": "https://www.mof.go.jp/rss/release.rdf",       "filter": False},
-    {"source": "jftc",    "name": "公正取引委員会","url": "https://www.jftc.go.jp/houdou/index.rdf",     "filter": False},
-    # キーワードフィルタあり（情報量が多すぎる省庁）
+    {"source": "fsa",     "name": "金融庁",       "url": "https://www.fsa.go.jp/news/news.xml",         "filter": False},
+    {"source": "nta",     "name": "国税庁",       "url": "https://www.nta.go.jp/whatsnew.rss",          "filter": True},
+    # 公正取引・規制
+    {"source": "jftc",    "name": "公正取引委員会","url": "https://www.jftc.go.jp/houdou/index.rdf",    "filter": False},
+    # 情報通信・サイバー
+    {"source": "soumu",   "name": "総務省",       "url": "https://www.soumu.go.jp/news.rdf",            "filter": True},
+    # フィルタあり
     {"source": "mlit",    "name": "国土交通省",   "url": "https://www.mlit.go.jp/news_rss.xml",         "filter": True},
     {"source": "mhlw",    "name": "厚生労働省",   "url": "https://www.mhlw.go.jp/stf/news.rdf",         "filter": True},
     {"source": "env",     "name": "環境省",       "url": "https://www.env.go.jp/press/rss.xml",         "filter": True},
@@ -32,10 +42,9 @@ RSS_FEEDS = [
 
 JST = timezone(timedelta(hours=9))
 KEEP_DAYS = 30
-MAX_PER_SOURCE = 12
+MAX_PER_SOURCE = 10
 MIN_TOTAL = 25
 
-# ノイズ：管理業務的な定例情報
 NOISE_KEYWORDS = [
     '議事録', '議事次第', '配布資料',
     '採用情報', '採用選考', '募集情報', '募集について', '募集案内',
@@ -51,47 +60,53 @@ NOISE_KEYWORDS = [
     'プログラム医療機器', '医療上の必要性',
 ]
 
-# 油脂業に直結
 CRITICAL_KEYWORDS = [
+    # 油脂業に直結
     '大豆', '菜種', 'なたね', 'パーム', 'パーム油', 'オリーブ', 'コーン',
     'とうもろこし', 'ごま', 'カカオ', 'ひまわり', '油糧', '植物油',
     '食用油', '油脂', 'ミール', '搾油',
     '労働災害', '労災', '食品安全', '食品衛生', '食中毒', '異物混入',
     'HACCP', '食品表示',
+    # 特許・知財（研究部門向け）
+    '特許', '実用新案', '意匠', '商標', '知的財産', '知財',
 ]
 
-# 重要：地政学・経済・エネルギー・AI
 HIGH_KEYWORDS = [
     # 貿易・通商
-    '貿易', '輸入', '輸出', '関税', '通商', '経済連携', 'TPP', 'FTA',
+    '貿易', '輸入', '輸出', '関税', '通商', '経済連携', 'TPP', 'FTA', 'EPA', 'RCEP',
     # 為替・経済
-    '為替', '円安', '円高', '物価', 'インフレ',
+    '為替', '円安', '円高', '物価', 'インフレ', '金利', '日銀',
     # 地政学
     'ウクライナ', 'ロシア', '中東', 'イラン', 'イスラエル', 'ガザ',
-    '紅海', 'ホルムズ', '台湾', '米中', '韓国', '北朝鮮',
+    '紅海', 'ホルムズ', '台湾', '米中', '韓国', '北朝鮮', 'ASEAN',
+    '経済安全保障', '安全保障', '制裁',
     # エネルギー
     '脱炭素', 'カーボン', 'CO2', '温室効果ガス', 'GX', 'グリーン',
     'エネルギー', '電力', '燃料', '原油', 'LNG', '水素', '再エネ',
-    # 産業
+    # 産業・供給網
     '半導体', 'レアアース', '戦略物資', 'サプライチェーン', '原材料', '原料',
     '農産物', '食料', '食糧', '飼料', '穀物',
     # AI・DX
     'AI', '人工知能', '生成AI', 'ChatGPT', 'LLM', 'ディープラーニング',
     'DX', 'デジタル', 'デジタル化',
     # サイバー
-    'サイバー', 'サイバーセキュリティ', 'ランサム', '不正アクセス',
+    'サイバー', 'サイバーセキュリティ', 'ランサム', '不正アクセス', '情報漏えい', '情報漏洩',
     # 感染症
     '感染症', 'パンデミック', '新型コロナ', 'インフルエンザ', 'ハンタウイルス',
     '鳥インフルエンザ', 'バイオテロ',
+    # 知財関連の重要トピック
+    '標準必須特許', 'SEP', 'ライセンス', '特許権', '商標権',
 ]
 
 MEDIUM_KEYWORDS = [
-    '製造業', '工場', '生産性', 'IoT', 'スマート', 'ロボット',
+    '製造業', '工場', '生産性', 'IoT', 'スマート', 'ロボット', 'スマート工場',
     '労働安全', '労働衛生', '熱中症', '化学物質',
     '最低賃金', '働き方改革', '人手不足', '人材育成',
-    '物流', '輸送', '港湾', 'トラック',
+    '物流', '輸送', '港湾', 'トラック', '海運',
     'BCP', '事業継続', '災害対策',
-    '規制改正', '法改正', '補助金', '支援策',
+    '規制改正', '法改正', '補助金', '支援策', '助成金',
+    '中小企業', 'スタートアップ',
+    '研究開発', 'R&D', 'イノベーション',
 ]
 
 
@@ -197,7 +212,6 @@ def main():
 
         seen = set()
         accepted = []
-        rejected_with_score = []  # スコア>0 だが filter で落ちたもの（補充候補）
 
         for item in items:
             title = clean_title(item['title'])
@@ -213,28 +227,21 @@ def main():
             score = calc_score(title)
             entry = {'title': title, 'pubDate': pub_iso, 'link': item['link'], 'source': feed['source'], 'score': score}
 
-            # ノイズは完全除外
             if is_noise(title):
                 continue
-
-            # filter=Trueの省庁はキーワード必須
             if feed['filter'] and score == 0:
                 continue
 
             accepted.append(entry)
 
-        # スコア降順→日付降順
-        accepted.sort(key=lambda x: (-x['score'], x['pubDate'][::-1] if False else x['pubDate']), reverse=False)
         accepted.sort(key=lambda x: x['pubDate'], reverse=True)
         accepted.sort(key=lambda x: -x['score'])
         by_source[feed['source']] = accepted[:MAX_PER_SOURCE]
 
-    # 採用分を結合
     final = []
     for items_list in by_source.values():
         final.extend(items_list)
 
-    # 最終ソート：日付新しい順
     final.sort(key=lambda x: x['pubDate'], reverse=True)
 
     output_items = [{'title': i['title'], 'pubDate': i['pubDate'], 'link': i['link'], 'source': i['source']} for i in final]
