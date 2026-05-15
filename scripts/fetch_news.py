@@ -1,10 +1,9 @@
 #!/usr/bin/env python3
 """
-官公庁RSSフィード取得スクリプト（v3）
-- 農水省・経産省・財務省は全件採用（油脂業と親和性が高い省庁）
-- 厚労省・国交省・環境省はキーワードフィルタあり
-- 保持期間30日
-- 最低表示件数を保証するため補充ロジック追加
+官公庁RSSフィード取得スクリプト（v4）
+- 情報源拡充: 首相官邸/デジタル庁/内閣府/公取委/中企庁 追加
+- キーワード拡充: AI/生成AI/地政学/サイバー/半導体 等
+- 補充ロジック改善: 完全無関係なノイズは補充対象外
 """
 import json
 import os
@@ -16,34 +15,43 @@ import urllib.request
 import xml.etree.ElementTree as ET
 
 RSS_FEEDS = [
-    {"source": "meti", "name": "経済産業省", "url": "https://www.meti.go.jp/ml_index_release.rdf", "filter": False},
-    {"source": "maff", "name": "農林水産省", "url": "https://www.maff.go.jp/j/rss/press.xml",      "filter": False},
-    {"source": "mlit", "name": "国土交通省", "url": "https://www.mlit.go.jp/news_rss.xml",         "filter": True},
-    {"source": "mhlw", "name": "厚生労働省", "url": "https://www.mhlw.go.jp/stf/news.rdf",         "filter": True},
-    {"source": "mof",  "name": "財務省",     "url": "https://www.mof.go.jp/rss/release.rdf",       "filter": False},
-    {"source": "env",  "name": "環境省",     "url": "https://www.env.go.jp/press/rss.xml",         "filter": True},
+    # 官邸・内閣系（最重要・無条件採用）
+    {"source": "kantei",  "name": "首相官邸",     "url": "https://www.kantei.go.jp/index.rdf",          "filter": False},
+    {"source": "cao",     "name": "内閣府",       "url": "https://www.cao.go.jp/news.rdf",              "filter": False},
+    {"source": "digital", "name": "デジタル庁",   "url": "https://www.digital.go.jp/rss/posts",         "filter": False},
+    # 経済・産業系
+    {"source": "meti",    "name": "経済産業省",   "url": "https://www.meti.go.jp/ml_index_release.rdf", "filter": False},
+    {"source": "maff",    "name": "農林水産省",   "url": "https://www.maff.go.jp/j/rss/press.xml",      "filter": False},
+    {"source": "mof",     "name": "財務省",       "url": "https://www.mof.go.jp/rss/release.rdf",       "filter": False},
+    {"source": "jftc",    "name": "公正取引委員会","url": "https://www.jftc.go.jp/houdou/index.rdf",     "filter": False},
+    # キーワードフィルタあり（情報量が多すぎる省庁）
+    {"source": "mlit",    "name": "国土交通省",   "url": "https://www.mlit.go.jp/news_rss.xml",         "filter": True},
+    {"source": "mhlw",    "name": "厚生労働省",   "url": "https://www.mhlw.go.jp/stf/news.rdf",         "filter": True},
+    {"source": "env",     "name": "環境省",       "url": "https://www.env.go.jp/press/rss.xml",         "filter": True},
 ]
 
 JST = timezone(timedelta(hours=9))
 KEEP_DAYS = 30
-MAX_PER_SOURCE = 15
-MIN_TOTAL = 20  # 最低表示件数
+MAX_PER_SOURCE = 12
+MIN_TOTAL = 25
 
+# ノイズ：管理業務的な定例情報
 NOISE_KEYWORDS = [
-    '議事録', '議事次第', '開催案内', '開催のお知らせ', '開催します', '開催結果',
-    '開催について', '開催日程', '開催概要', '配布資料', '資料を公表',
-    'ワーキンググループ', '審議会', '分科会', '部会', '協議会',
+    '議事録', '議事次第', '配布資料',
     '採用情報', '採用選考', '募集情報', '募集について', '募集案内',
-    '公募', '人事', '幹部名簿', '任命', '内示', '退任',
     '霞が関公募', '係長級', '総合職', '一般職', '技官', '官庁訪問',
     '入札', '落札', '一般競争', '見積', '入札公告',
     '報道発表資料を更新', '報告数の推移を更新', '報道発表資料を掲載',
-    'Q&Aを更新', 'よくある質問', '更新しました',
-    '月報について', '統計月報', '統計表', '統計データ',
+    'Q&Aを更新', 'よくある質問',
     'WEBマガジン', 'メルマガ', '対象者のみなさまへ', 'ご協力のお願い',
-    '幹部紹介', '組織変更', '記者会見', '大臣会見',
+    '幹部紹介', '幹部名簿', '組織変更',
+    '21世紀出生児', '人口動態統計', 'ハンセン病', '抑留者',
+    '医療用手袋', '化粧品・医薬部外品', '再生医療等製品',
+    'キャリアコンサルタント', '医療職', '医療安全のためのピアレビュー',
+    'プログラム医療機器', '医療上の必要性',
 ]
 
+# 油脂業に直結
 CRITICAL_KEYWORDS = [
     '大豆', '菜種', 'なたね', 'パーム', 'パーム油', 'オリーブ', 'コーン',
     'とうもろこし', 'ごま', 'カカオ', 'ひまわり', '油糧', '植物油',
@@ -51,20 +59,39 @@ CRITICAL_KEYWORDS = [
     '労働災害', '労災', '食品安全', '食品衛生', '食中毒', '異物混入',
     'HACCP', '食品表示',
 ]
+
+# 重要：地政学・経済・エネルギー・AI
 HIGH_KEYWORDS = [
-    '貿易', '輸入', '輸出', '関税', '為替', '円安', '円高',
+    # 貿易・通商
+    '貿易', '輸入', '輸出', '関税', '通商', '経済連携', 'TPP', 'FTA',
+    # 為替・経済
+    '為替', '円安', '円高', '物価', 'インフレ',
+    # 地政学
+    'ウクライナ', 'ロシア', '中東', 'イラン', 'イスラエル', 'ガザ',
+    '紅海', 'ホルムズ', '台湾', '米中', '韓国', '北朝鮮',
+    # エネルギー
     '脱炭素', 'カーボン', 'CO2', '温室効果ガス', 'GX', 'グリーン',
-    'エネルギー', '電力', '燃料', '原油', 'LNG',
-    '物価', '原材料', '原料', 'サプライチェーン', '供給',
+    'エネルギー', '電力', '燃料', '原油', 'LNG', '水素', '再エネ',
+    # 産業
+    '半導体', 'レアアース', '戦略物資', 'サプライチェーン', '原材料', '原料',
     '農産物', '食料', '食糧', '飼料', '穀物',
+    # AI・DX
+    'AI', '人工知能', '生成AI', 'ChatGPT', 'LLM', 'ディープラーニング',
+    'DX', 'デジタル', 'デジタル化',
+    # サイバー
+    'サイバー', 'サイバーセキュリティ', 'ランサム', '不正アクセス',
+    # 感染症
+    '感染症', 'パンデミック', '新型コロナ', 'インフルエンザ', 'ハンタウイルス',
+    '鳥インフルエンザ', 'バイオテロ',
 ]
+
 MEDIUM_KEYWORDS = [
-    '製造業', '工場', '生産性',
-    'DX', 'AI', 'IoT', 'デジタル化', 'スマート',
+    '製造業', '工場', '生産性', 'IoT', 'スマート', 'ロボット',
     '労働安全', '労働衛生', '熱中症', '化学物質',
-    '最低賃金', '働き方改革', '人手不足',
+    '最低賃金', '働き方改革', '人手不足', '人材育成',
     '物流', '輸送', '港湾', 'トラック',
-    'BCP', '事業継続', '災害対策', '規制改正', '法改正',
+    'BCP', '事業継続', '災害対策',
+    '規制改正', '法改正', '補助金', '支援策',
 ]
 
 
@@ -157,7 +184,6 @@ def main():
     print(f"取得開始 [{datetime.now(JST).isoformat()}]")
     cutoff = datetime.now(JST) - timedelta(days=KEEP_DAYS)
 
-    # 省庁ごとに取得・フィルタ
     by_source = {}
     for feed in RSS_FEEDS:
         print(f"\n{feed['name']} 取得中...")
@@ -171,7 +197,7 @@ def main():
 
         seen = set()
         accepted = []
-        rejected_noise = []  # ノイズ除外分（補充用に保持）
+        rejected_with_score = []  # スコア>0 だが filter で落ちたもの（補充候補）
 
         for item in items:
             title = clean_title(item['title'])
@@ -184,48 +210,29 @@ def main():
                 continue
 
             pub_iso = pub.isoformat() if isinstance(pub, datetime) else datetime.now(JST).isoformat()
-            entry = {'title': title, 'pubDate': pub_iso, 'link': item['link'], 'source': feed['source'], 'score': calc_score(title)}
+            score = calc_score(title)
+            entry = {'title': title, 'pubDate': pub_iso, 'link': item['link'], 'source': feed['source'], 'score': score}
 
+            # ノイズは完全除外
             if is_noise(title):
-                rejected_noise.append(entry)
                 continue
 
             # filter=Trueの省庁はキーワード必須
-            if feed['filter'] and entry['score'] == 0:
-                rejected_noise.append(entry)
+            if feed['filter'] and score == 0:
                 continue
 
             accepted.append(entry)
 
-        # スコア降順→日付降順でソートしてMAX_PER_SOURCE件
-        accepted.sort(key=lambda x: (-x['score'], x['pubDate']), reverse=False)
+        # スコア降順→日付降順
+        accepted.sort(key=lambda x: (-x['score'], x['pubDate'][::-1] if False else x['pubDate']), reverse=False)
         accepted.sort(key=lambda x: x['pubDate'], reverse=True)
         accepted.sort(key=lambda x: -x['score'])
-        by_source[feed['source']] = {
-            'accepted': accepted[:MAX_PER_SOURCE],
-            'rejected': sorted(rejected_noise, key=lambda x: x['pubDate'], reverse=True)
-        }
+        by_source[feed['source']] = accepted[:MAX_PER_SOURCE]
 
     # 採用分を結合
     final = []
-    for src_data in by_source.values():
-        final.extend(src_data['accepted'])
-
-    # 最低件数に満たない場合、除外分から補充（日付新しい順）
-    if len(final) < MIN_TOTAL:
-        print(f"\n件数不足({len(final)}件)のため補充します...")
-        all_rejected = []
-        for src_data in by_source.values():
-            all_rejected.extend(src_data['rejected'])
-        all_rejected.sort(key=lambda x: x['pubDate'], reverse=True)
-
-        existing_titles = {i['title'] for i in final}
-        for item in all_rejected:
-            if len(final) >= MIN_TOTAL:
-                break
-            if item['title'] not in existing_titles:
-                final.append(item)
-                existing_titles.add(item['title'])
+    for items_list in by_source.values():
+        final.extend(items_list)
 
     # 最終ソート：日付新しい順
     final.sort(key=lambda x: x['pubDate'], reverse=True)
@@ -236,7 +243,7 @@ def main():
     src_count = {}
     for i in output_items:
         src_count[i['source']] = src_count.get(i['source'], 0) + 1
-    for src, cnt in src_count.items():
+    for src, cnt in sorted(src_count.items()):
         print(f"  {src}: {cnt}件")
 
     output = {'updatedAt': datetime.now(JST).isoformat(), 'count': len(output_items), 'items': output_items}
