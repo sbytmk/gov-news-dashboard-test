@@ -1,7 +1,121 @@
 {
-  "updatedAt": "2026-05-15T15:43:23.777240+09:00",
-  "count": 1,
+  "updatedAt": "2026-05-15T15:53:00.171064+09:00",
+  "count": 20,
   "items": [
+    {
+      "title": "第５回「中東情勢の影響を受ける医薬品、医療機器、医療物資等の確保対策本部」",
+      "pubDate": "2026-05-15T15:00:00+09:00",
+      "link": "https://www.mhlw.go.jp/stf/newpage_73206.html",
+      "source": "mhlw"
+    },
+    {
+      "title": "薬事審議会 医薬品第一部会を開催します",
+      "pubDate": "2026-05-15T14:00:00+09:00",
+      "link": "https://www.mhlw.go.jp/stf/newpage_73133.html",
+      "source": "mhlw"
+    },
+    {
+      "title": "病院報告（令和８(2026)年2月分概数）",
+      "pubDate": "2026-05-15T14:00:00+09:00",
+      "link": "https://www.mhlw.go.jp/toukei/saikin/hw/byouin/m26/02.html",
+      "source": "mhlw"
+    },
+    {
+      "title": "ロシア連邦政府等から提供された抑留者に関する資料を日本側の資料と照合し、抑留中に死亡した者の個人を特定しました",
+      "pubDate": "2026-05-15T14:00:00+09:00",
+      "link": "https://www.mhlw.go.jp/stf/newpage_72558.html",
+      "source": "mhlw"
+    },
+    {
+      "title": "ロシア連邦政府等から提供された抑留者に関する資料について（資料の一覧や死亡者名簿が閲覧できます）",
+      "pubDate": "2026-05-15T14:00:00+09:00",
+      "link": "https://www.mhlw.go.jp/topics/bukyoku/syakai/soren/index.html",
+      "source": "mhlw"
+    },
+    {
+      "title": "新型コロナウイルス感染症に関する報道発表資料を更新しました",
+      "pubDate": "2026-05-15T13:55:00+09:00",
+      "link": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000121431_00485.html",
+      "source": "mhlw"
+    },
+    {
+      "title": "新型コロナウイルス感染症の定点当たり報告数の推移を更新しました",
+      "pubDate": "2026-05-15T13:55:00+09:00",
+      "link": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/houkokusuunosuii.html",
+      "source": "mhlw"
+    },
+    {
+      "title": "採用情報（期間業務職員（医政局）募集情報）",
+      "pubDate": "2026-05-15T12:30:00+09:00",
+      "link": "https://www.mhlw.go.jp/stf/kouseiroudoushou/saiyou/hijoukin/hj-iseikyoku.html",
+      "source": "mhlw"
+    },
+    {
+      "title": "薬事工業生産動態統計令和8年2月分月報について",
+      "pubDate": "2026-05-15T11:00:00+09:00",
+      "link": "https://www.mhlw.go.jp/toukei/list/105-1c.html",
+      "source": "mhlw"
+    },
+    {
+      "title": "「第57回労働政策審議会」を開催します（開催案内）",
+      "pubDate": "2026-05-15T10:00:00+09:00",
+      "link": "https://www.mhlw.go.jp/stf/newpage_73039.html",
+      "source": "mhlw"
+    },
+    {
+      "title": "採用情報（期間業務職員（保険局）募集情報）",
+      "pubDate": "2026-05-15T10:00:00+09:00",
+      "link": "https://www.mhlw.go.jp/stf/kouseiroudoushou/saiyou/hijoukin/hj-hokenkyoku02.html",
+      "source": "mhlw"
+    },
+    {
+      "title": "公益事業に関する争議行為の予告公表ページについて更新されました",
+      "pubDate": "2026-05-15T10:00:00+09:00",
+      "link": "https://www.mhlw.go.jp/seisakunitsuite/bunya/koyou_roudou/roudouseisaku/sougikoui/index.html",
+      "source": "mhlw"
+    },
+    {
+      "title": "上野厚生労働大臣 閣議後記者会見のお知らせ",
+      "pubDate": "2026-05-14T16:53:00+09:00",
+      "link": "https://www.mhlw.go.jp/stf/newpage_73184.html",
+      "source": "mhlw"
+    },
+    {
+      "title": "薬事審議会 化粧品・医薬部外品部会を開催します",
+      "pubDate": "2026-05-14T14:00:00+09:00",
+      "link": "https://www.mhlw.go.jp/stf/newpage_73097.html",
+      "source": "mhlw"
+    },
+    {
+      "title": "薬事審議会 再生医療等製品・生物由来技術部会を開催します",
+      "pubDate": "2026-05-14T14:00:00+09:00",
+      "link": "https://www.mhlw.go.jp/stf/newpage_73055.html",
+      "source": "mhlw"
+    },
+    {
+      "title": "キャリアコンサルタントになりたい方へ（第31回キャリアコンサルタント試験結果の概要について）",
+      "pubDate": "2026-05-14T13:30:00+09:00",
+      "link": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/jinzaikaihatsu/career_consultant01.html",
+      "source": "mhlw"
+    },
+    {
+      "title": "令和８年度 特定機能病院における医療安全のためのピアレビュー推進事業の公募について",
+      "pubDate": "2026-05-14T12:00:00+09:00",
+      "link": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/iryou/newpage_00028.html",
+      "source": "mhlw"
+    },
+    {
+      "title": "令和８年度 特定機能病院管理者研修事業の公募について",
+      "pubDate": "2026-05-14T12:00:00+09:00",
+      "link": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/iryou/newpage_00027.html",
+      "source": "mhlw"
+    },
+    {
+      "title": "令和８年4月22日 第111回厚生科学審議会予防接種・ワクチン分科会副反応検討部会、令和8年度第1回薬事審議会医薬品等安全対策部会安全対策調査会（合同開催）議事録",
+      "pubDate": "2026-05-13T14:00:00+09:00",
+      "link": "https://www.mhlw.go.jp/stf/newpage_73134.html",
+      "source": "mhlw"
+    },
     {
       "title": "最低賃金に関する実態調査",
       "pubDate": "2026-05-08T17:00:00+09:00",
