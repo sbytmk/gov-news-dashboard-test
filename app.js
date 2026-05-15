@@ -32,15 +32,20 @@ const SOURCE_LABELS = {
   kantei:  { name: '官邸',     class: 'source-kantei' },
   cao:     { name: '内閣府',   class: 'source-cao' },
   digital: { name: 'デジタル庁', class: 'source-digital' },
+  mofa:    { name: '外務省',   class: 'source-mofa' },
   meti:    { name: '経産省',   class: 'source-meti' },
+  chusho:  { name: '中企庁',   class: 'source-chusho' },
+  jpo:     { name: '特許庁',   class: 'source-jpo' },
   maff:    { name: '農水省',   class: 'source-maff' },
   mof:     { name: '財務省',   class: 'source-mof' },
+  fsa:     { name: '金融庁',   class: 'source-fsa' },
+  nta:     { name: '国税庁',   class: 'source-nta' },
   jftc:    { name: '公取委',   class: 'source-jftc' },
+  soumu:   { name: '総務省',   class: 'source-soumu' },
   mlit:    { name: '国交省',   class: 'source-mlit' },
   mhlw:    { name: '厚労省',   class: 'source-mhlw' },
   env:     { name: '環境省',   class: 'source-env' },
 };
-
 // ===== 時計表示 =====
 function updateClock() {
   const now = new Date();
