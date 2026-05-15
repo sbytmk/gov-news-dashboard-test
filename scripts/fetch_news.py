@@ -1,10 +1,7 @@
 #!/usr/bin/env python3
 """
-官公庁RSSフィード取得スクリプト
-GitHub Actionsで朝6時・昼12時に実行
-取得したニュースをdata/news.jsonに保存
+官公庁RSSフィード取得スクリプト（改善版 v2）
 """
-
 import json
 import os
 import re
@@ -14,71 +11,75 @@ from email.utils import parsedate_to_datetime
 import urllib.request
 import xml.etree.ElementTree as ET
 
-# ===== 取得対象RSSフィード =====
-# 各省庁の公式RSSフィードURL
 RSS_FEEDS = [
-    {
-        "source": "meti",
-        "name": "経済産業省",
-        "url": "https://www.meti.go.jp/ml_index_release.rdf",
-    },
-    {
-        "source": "maff",
-        "name": "農林水産省",
-        "url": "https://www.maff.go.jp/j/rss/press.xml",
-    },
-    {
-        "source": "mlit",
-        "name": "国土交通省",
-        "url": "https://www.mlit.go.jp/news_rss.xml",
-    },
-    {
-        "source": "mhlw",
-        "name": "厚生労働省",
-        "url": "https://www.mhlw.go.jp/stf/news.rdf",
-    },
-    {
-        "source": "mof",
-        "name": "財務省",
-        "url": "https://www.mof.go.jp/rss/release.rdf",
-    },
-    {
-        "source": "env",
-        "name": "環境省",
-        "url": "https://www.env.go.jp/press/rss.xml",
-    },
+    {"source": "meti", "name": "経済産業省", "url": "https://www.meti.go.jp/ml_index_release.rdf"},
+    {"source": "maff", "name": "農林水産省", "url": "https://www.maff.go.jp/j/rss/press.xml"},
+    {"source": "mlit", "name": "国土交通省", "url": "https://www.mlit.go.jp/news_rss.xml"},
+    {"source": "mhlw", "name": "厚生労働省", "url": "https://www.mhlw.go.jp/stf/news.rdf"},
+    {"source": "mof",  "name": "財務省",     "url": "https://www.mof.go.jp/rss/release.rdf"},
+    {"source": "env",  "name": "環境省",     "url": "https://www.env.go.jp/press/rss.xml"},
 ]
 
 JST = timezone(timedelta(hours=9))
 
-# 名前空間
-NS = {
-    'rss': 'http://purl.org/rss/1.0/',
-    'dc': 'http://purl.org/dc/elements/1.1/',
-    'atom': 'http://www.w3.org/2005/Atom',
-}
+NOISE_KEYWORDS = [
+    '議事録', '議事次第', '開催案内', '開催のお知らせ', '開催します', '開催結果',
+    '開催について', '開催日程', '開催概要', '配布資料', '資料を公表',
+    'ワーキンググループ', '検討会', '審議会', '分科会', '部会', '協議会',
+    '採用情報', '採用選考', '募集情報', '募集について', '募集案内',
+    '公募', '人事', '幹部名簿', '任命', '内示', '退任',
+    '霞が関公募', '係長級', '総合職', '一般職', '技官', '官庁訪問',
+    '入札', '落札', '調達', '一般競争', '見積', '入札公告',
+    '報道発表資料を更新', '報告数の推移を更新', '報道発表資料を掲載',
+    'Q&Aを更新', 'よくある質問', '更新しました',
+    '概数', '速報', '月報', '統計月報', '統計表', '統計データ',
+    '説明会', 'セミナー', '講演会', '表彰', '受賞', 'WEBマガジン',
+    'メルマガ', '対象者のみなさまへ', 'ご協力のお願い',
+    '幹部紹介', '組織変更',
+]
+
+CRITICAL_KEYWORDS = [
+    '大豆', '菜種', 'なたね', 'パーム', 'パーム油', 'オリーブ', 'コーン',
+    'とうもろこし', 'ごま', 'カカオ', 'ひまわり', '油糧', '植物油',
+    '食用油', '油脂', 'ミール', '搾油',
+    '労働災害', '労災', '食品安全', '食品衛生', '食中毒', '異物混入',
+    'HACCP', '食品表示',
+]
+
+HIGH_KEYWORDS = [
+    '貿易', '輸入', '輸出', '関税', '為替', '円安', '円高',
+    '脱炭素', 'カーボン', 'CO2', '温室効果ガス', 'GX', 'グリーン',
+    'エネルギー', '電力', '燃料', '原油', 'LNG',
+    '物価', '原材料', '原料', 'サプライチェーン', '供給',
+    '農産物', '食料', '食糧', '飼料', '穀物',
+]
+
+MEDIUM_KEYWORDS = [
+    '製造業', '工場', '生産性',
+    'DX', 'AI', 'IoT', 'デジタル化', 'スマート',
+    '労働安全', '労働衛生', '熱中症', '化学物質',
+    '最低賃金', '働き方改革', '人手不足',
+    '物流', '輸送', '港湾', 'トラック', '2024年問題',
+    'BCP', '事業継続', '災害対策',
+    '規制改正', '法改正',
+]
+
+MAX_PER_SOURCE = 12
 
 
 def fetch_url(url, timeout=20):
-    """URL取得（UAヘッダ付与）"""
-    req = urllib.request.Request(
-        url,
-        headers={
-            'User-Agent': 'Mozilla/5.0 (compatible; GovNewsDashboard/1.0)',
-            'Accept': 'application/rss+xml, application/xml, text/xml, */*',
-        }
-    )
+    req = urllib.request.Request(url, headers={
+        'User-Agent': 'Mozilla/5.0 (compatible; GovNewsDashboard/1.0)',
+        'Accept': 'application/rss+xml, application/xml, text/xml, */*',
+    })
     with urllib.request.urlopen(req, timeout=timeout) as r:
         return r.read()
 
 
 def parse_date(date_str):
-    """様々な日付フォーマットをパース"""
     if not date_str:
         return None
     date_str = date_str.strip()
-
-    # RFC822 (Mon, 01 Jan 2024 12:00:00 +0900)
     try:
         dt = parsedate_to_datetime(date_str)
         if dt.tzinfo is None:
@@ -86,17 +87,9 @@ def parse_date(date_str):
         return dt.astimezone(JST)
     except Exception:
         pass
-
-    # ISO 8601 (2024-01-01T12:00:00+09:00)
-    iso_patterns = [
-        '%Y-%m-%dT%H:%M:%S%z',
-        '%Y-%m-%dT%H:%M:%SZ',
-        '%Y-%m-%dT%H:%M:%S',
-        '%Y-%m-%d %H:%M:%S',
-        '%Y-%m-%d',
-        '%Y/%m/%d',
-    ]
-    for fmt in iso_patterns:
+    for fmt in ['%Y-%m-%dT%H:%M:%S%z', '%Y-%m-%dT%H:%M:%SZ',
+                '%Y-%m-%dT%H:%M:%S', '%Y-%m-%d %H:%M:%S',
+                '%Y-%m-%d', '%Y/%m/%d']:
         try:
             dt = datetime.strptime(date_str.replace('Z', '+0000'), fmt)
             if dt.tzinfo is None:
@@ -104,133 +97,135 @@ def parse_date(date_str):
             return dt.astimezone(JST)
         except Exception:
             continue
-
     return None
 
 
 def parse_feed(xml_bytes, source_id):
-    """RSS/RDF/Atomのいずれもパース"""
     items = []
     try:
-        # BOM除去
         if xml_bytes.startswith(b'\xef\xbb\xbf'):
             xml_bytes = xml_bytes[3:]
         root = ET.fromstring(xml_bytes)
     except ET.ParseError as e:
-        print(f"  ⚠ XMLパースエラー: {e}", file=sys.stderr)
+        print(f"  XMLパースエラー: {e}", file=sys.stderr)
         return items
 
-    # RSS 2.0 (channel/item)
     for item in root.findall('.//channel/item'):
         title_el = item.find('title')
         date_el = item.find('pubDate') or item.find('{http://purl.org/dc/elements/1.1/}date')
         link_el = item.find('link')
         if title_el is not None and title_el.text:
-            items.append({
-                'title': title_el.text.strip(),
-                'pubDate': parse_date(date_el.text if date_el is not None and date_el.text else None),
-                'link': link_el.text.strip() if link_el is not None and link_el.text else '',
-                'source': source_id,
-            })
+            items.append({'title': title_el.text.strip(), 'pubDate': parse_date(date_el.text if date_el is not None else None), 'link': link_el.text.strip() if link_el is not None and link_el.text else '', 'source': source_id})
 
-    # RDF (RSS 1.0) - rss:item 直下
     if not items:
         for item in root.findall('.//{http://purl.org/rss/1.0/}item'):
             title_el = item.find('{http://purl.org/rss/1.0/}title')
             date_el = item.find('{http://purl.org/dc/elements/1.1/}date')
             link_el = item.find('{http://purl.org/rss/1.0/}link')
             if title_el is not None and title_el.text:
-                items.append({
-                    'title': title_el.text.strip(),
-                    'pubDate': parse_date(date_el.text if date_el is not None and date_el.text else None),
-                    'link': link_el.text.strip() if link_el is not None and link_el.text else '',
-                    'source': source_id,
-                })
+                items.append({'title': title_el.text.strip(), 'pubDate': parse_date(date_el.text if date_el is not None else None), 'link': link_el.text.strip() if link_el is not None and link_el.text else '', 'source': source_id})
 
-    # Atom (entry)
     if not items:
         for entry in root.findall('.//{http://www.w3.org/2005/Atom}entry'):
             title_el = entry.find('{http://www.w3.org/2005/Atom}title')
             date_el = entry.find('{http://www.w3.org/2005/Atom}updated') or entry.find('{http://www.w3.org/2005/Atom}published')
             link_el = entry.find('{http://www.w3.org/2005/Atom}link')
             if title_el is not None and title_el.text:
-                href = link_el.get('href') if link_el is not None else ''
-                items.append({
-                    'title': title_el.text.strip(),
-                    'pubDate': parse_date(date_el.text if date_el is not None and date_el.text else None),
-                    'link': href,
-                    'source': source_id,
-                })
+                items.append({'title': title_el.text.strip(), 'pubDate': parse_date(date_el.text if date_el is not None else None), 'link': link_el.get('href') if link_el is not None else '', 'source': source_id})
 
     return items
 
 
 def clean_title(title):
-    """タイトルクリーンアップ"""
-    # 連続空白を1つに
     title = re.sub(r'\s+', ' ', title)
-    # 改行コード除去
-    title = title.replace('\n', '').replace('\r', '')
-    return title.strip()
+    return title.replace('\n', '').replace('\r', '').strip()
+
+
+def is_noise(title):
+    for noise in NOISE_KEYWORDS:
+        if noise in title:
+            return True
+    return False
+
+
+def calc_relevance_score(title):
+    score = 0
+    for kw in CRITICAL_KEYWORDS:
+        if kw in title:
+            score += 10
+    for kw in HIGH_KEYWORDS:
+        if kw in title:
+            score += 5
+    for kw in MEDIUM_KEYWORDS:
+        if kw in title:
+            score += 2
+    return score
 
 
 def main():
-    print(f"🚀 官公庁ニュース取得開始 [{datetime.now(JST).isoformat()}]")
+    print(f"取得開始 [{datetime.now(JST).isoformat()}]")
     all_items = []
 
     for feed in RSS_FEEDS:
-        print(f"\n📥 {feed['name']} ({feed['url']})")
+        print(f"\n{feed['name']} 取得中...")
         try:
             data = fetch_url(feed['url'])
             items = parse_feed(data, feed['source'])
-            print(f"  ✓ {len(items)}件取得")
+            print(f"  {len(items)}件取得")
             all_items.extend(items)
         except Exception as e:
-            print(f"  ✗ 取得失敗: {e}", file=sys.stderr)
-            continue
+            print(f"  取得失敗: {e}", file=sys.stderr)
 
-    # クリーンアップ＆フィルタ
-    cleaned = []
+    cutoff = datetime.now(JST) - timedelta(days=14)
+    candidates = []
     seen_titles = set()
-    cutoff = datetime.now(JST) - timedelta(days=14)  # 直近2週間のみ
 
     for item in all_items:
         title = clean_title(item['title'])
         if not title or len(title) < 5:
             continue
-        # 重複除去
         if title in seen_titles:
             continue
         seen_titles.add(title)
-
-        # 日付フィルタ
+        if is_noise(title):
+            continue
+        score = calc_relevance_score(title)
+        if score == 0:
+            continue
         pub = item['pubDate']
         if pub is None:
-            # 日付不明は除外せず現在時刻として扱う
             pub = datetime.now(JST)
         elif pub < cutoff:
             continue
-
-        cleaned.append({
-            'title': title,
-            'pubDate': pub.isoformat(),
-            'link': item['link'],
-            'source': item['source'],
+        candidates.append({
+            'title': title, 'pubDate': pub.isoformat(),
+            'link': item['link'], 'source': item['source'], 'score': score,
         })
 
-    # 新しい順にソート
-    cleaned.sort(key=lambda x: x['pubDate'], reverse=True)
+    by_source = {}
+    for item in candidates:
+        by_source.setdefault(item['source'], []).append(item)
 
-    # 最大120件に制限（表示は分類後30件程度なので余裕を持つ）
-    cleaned = cleaned[:120]
+    final_items = []
+    for source_id, items_list in by_source.items():
+        items_list.sort(key=lambda x: (-x['score'], x['pubDate']), reverse=False)
+        items_list.sort(key=lambda x: x['pubDate'], reverse=True)
+        items_list.sort(key=lambda x: -x['score'])
+        final_items.extend(items_list[:MAX_PER_SOURCE])
 
-    print(f"\n📊 集計結果: {len(cleaned)}件")
+    final_items.sort(key=lambda x: x['pubDate'], reverse=True)
 
-    # 保存
+    output_items = [
+        {'title': i['title'], 'pubDate': i['pubDate'], 'link': i['link'], 'source': i['source']}
+        for i in final_items
+    ]
+
+    print(f"\n最終採用: {len(output_items)}件")
+
     output = {
         'updatedAt': datetime.now(JST).isoformat(),
-        'count': len(cleaned),
-        'items': cleaned,
+        'count': len(output_items),
+        'items': output_items,
     }
 
     output_path = os.path.join(os.path.dirname(__file__), '..', 'data', 'news.json')
@@ -238,8 +233,7 @@ def main():
     with open(output_path, 'w', encoding='utf-8') as f:
         json.dump(output, f, ensure_ascii=False, indent=2)
 
-    print(f"💾 保存完了: {output_path}")
-    print(f"✅ 完了")
+    print(f"保存完了: {output_path}")
 
 
 if __name__ == '__main__':
