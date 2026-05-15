@@ -1,0 +1,43 @@
+name: Fetch Government News
+
+on:
+  schedule:
+    # JST 朝6:00 = UTC 21:00 (前日)
+    # JST 昼12:00 = UTC 03:00
+    # 月〜金 (cronのday-of-week: 月=1 〜 金=5)
+    # GitHub ActionsはUTC基準のため、JST月〜金に合わせるには UTC日付を調整
+    # JST 6:00月-金 → UTC 21:00 日-木 (0,1,2,3,4)
+    # JST 12:00月-金 → UTC 03:00 月-金 (1,2,3,4,5)
+    - cron: '0 21 * * 0-4'   # JST 06:00 月-金
+    - cron: '0 3 * * 1-5'    # JST 12:00 月-金
+  workflow_dispatch:  # 手動実行も可能
+
+permissions:
+  contents: write
+
+jobs:
+  fetch-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Fetch news from RSS feeds
+        run: python scripts/fetch_news.py
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/news.json
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "🔄 Update news data: $(TZ='Asia/Tokyo' date +'%Y-%m-%d %H:%M JST')"
+            git push
+          fi

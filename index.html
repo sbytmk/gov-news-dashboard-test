@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>官公庁ニュースダッシュボード | 生産管理部門</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ========== ヘッダー ========== -->
+<header class="dashboard-header">
+  <div class="header-left">
+    <div class="title-block">
+      <h1>官公庁ニュース ダッシュボード</h1>
+      <p class="subtitle">Government News Monitor for Production Management</p>
+    </div>
+  </div>
+  <div class="header-right">
+    <div class="clock-block">
+      <div id="current-date">----年--月--日 (-)</div>
+      <div id="current-time">--:--:--</div>
+    </div>
+    <div class="update-info">
+      <span class="update-label">最終更新</span>
+      <span id="last-updated">--:--</span>
+    </div>
+  </div>
+</header>
+
+<!-- ========== キーワードティッカー ========== -->
+<section class="ticker-section">
+  <div class="ticker-label">注目キーワード</div>
+  <div class="ticker-wrapper">
+    <div class="ticker-content" id="keyword-ticker">
+      <!-- JSで生成 -->
+    </div>
+  </div>
+</section>
+
+<!-- ========== メインコンテンツ ========== -->
+<main class="dashboard-main">
+
+  <!-- 左カラム：注目ニュース（業務影響度：高） -->
+  <section class="column column-priority">
+    <div class="column-header">
+      <span class="priority-badge priority-high">業務影響度 高</span>
+      <h2>注目すべき官公庁ニュース</h2>
+      <span class="news-count" id="priority-count">0件</span>
+    </div>
+    <div class="news-list" id="priority-news">
+      <!-- JSで生成 -->
+    </div>
+  </section>
+
+  <!-- 右カラム：カテゴリ別新着 -->
+  <section class="column column-recent">
+    <div class="column-header">
+      <span class="category-badge">カテゴリ別</span>
+      <h2>新着ニュース</h2>
+      <span class="news-count" id="recent-count">0件</span>
+    </div>
+    <div class="news-list" id="recent-news">
+      <!-- JSで生成 -->
+    </div>
+  </section>
+
+</main>
+
+<!-- ========== フッター ========== -->
+<footer class="dashboard-footer">
+  <div class="footer-sources">
+    <span class="source-tag">経済産業省</span>
+    <span class="source-tag">農林水産省</span>
+    <span class="source-tag">国土交通省</span>
+    <span class="source-tag">厚生労働省</span>
+    <span class="source-tag">財務省</span>
+    <span class="source-tag">環境省</span>
+  </div>
+  <div class="footer-status">
+    <span class="status-indicator" id="status-dot"></span>
+    <span id="status-text">SYSTEM ONLINE</span>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

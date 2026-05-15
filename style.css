@@ -1,0 +1,485 @@
+/* ============================================
+   官公庁ニュースダッシュボード スタイル
+   想定: 67インチモニター / 視認距離 3-5m
+   ============================================ */
+
+:root {
+  /* カラーパレット - ダーク基調、視認性重視 */
+  --bg-primary: #0a0e1a;
+  --bg-secondary: #131826;
+  --bg-tertiary: #1c2236;
+  --bg-card: #1a2030;
+
+  --text-primary: #ffffff;
+  --text-secondary: #b8c4d9;
+  --text-muted: #6b7896;
+
+  --accent-blue: #4a9eff;
+  --accent-cyan: #00d4ff;
+  --accent-green: #00e676;
+  --accent-yellow: #ffd54f;
+  --accent-orange: #ff8a3d;
+  --accent-red: #ff4757;
+  --accent-purple: #b388ff;
+
+  --border-color: #2a3148;
+  --shadow-glow: 0 0 20px rgba(74, 158, 255, 0.15);
+
+  /* カテゴリカラー */
+  --cat-meti: #4a9eff;      /* 経済産業省 - 青 */
+  --cat-maff: #00e676;      /* 農林水産省 - 緑 */
+  --cat-mlit: #ffd54f;      /* 国土交通省 - 黄 */
+  --cat-mhlw: #ff8a3d;      /* 厚生労働省 - 橙 */
+  --cat-mof: #b388ff;       /* 財務省 - 紫 */
+  --cat-env: #00d4ff;       /* 環境省 - シアン */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: 'Noto Sans JP', 'Hiragino Sans', 'Yu Gothic', sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+body {
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+  background:
+    radial-gradient(ellipse at top left, rgba(74, 158, 255, 0.08), transparent 50%),
+    radial-gradient(ellipse at bottom right, rgba(0, 212, 255, 0.05), transparent 50%),
+    var(--bg-primary);
+}
+
+/* ============================================
+   ヘッダー
+   ============================================ */
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2vw 2vw;
+  background: linear-gradient(90deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%);
+  border-bottom: 2px solid var(--accent-blue);
+  box-shadow: var(--shadow-glow);
+}
+
+.title-block h1 {
+  font-size: 2.6vw;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  background: linear-gradient(90deg, var(--accent-cyan), var(--accent-blue));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.subtitle {
+  font-size: 0.9vw;
+  color: var(--text-muted);
+  margin-top: 0.2vw;
+  letter-spacing: 0.15em;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 2vw;
+}
+
+.clock-block {
+  text-align: right;
+}
+
+#current-date {
+  font-size: 1.1vw;
+  color: var(--text-secondary);
+}
+
+#current-time {
+  font-size: 2.2vw;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--accent-cyan);
+  text-shadow: 0 0 10px rgba(0, 212, 255, 0.4);
+}
+
+.update-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.8vw 1.5vw;
+  background: var(--bg-card);
+  border-radius: 0.5vw;
+  border: 1px solid var(--border-color);
+}
+
+.update-label {
+  font-size: 0.8vw;
+  color: var(--text-muted);
+  margin-bottom: 0.2vw;
+}
+
+#last-updated {
+  font-size: 1.4vw;
+  font-weight: 600;
+  color: var(--accent-green);
+}
+
+/* ============================================
+   キーワードティッカー
+   ============================================ */
+.ticker-section {
+  display: flex;
+  align-items: center;
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-color);
+  padding: 0.7vw 0;
+  overflow: hidden;
+}
+
+.ticker-label {
+  flex-shrink: 0;
+  padding: 0 1.5vw;
+  font-size: 1vw;
+  font-weight: 700;
+  color: var(--bg-primary);
+  background: linear-gradient(90deg, var(--accent-yellow), var(--accent-orange));
+  height: 100%;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.1em;
+  margin-right: 1.5vw;
+  clip-path: polygon(0 0, 100% 0, calc(100% - 1vw) 100%, 0 100%);
+  padding-right: 2.5vw;
+}
+
+.ticker-wrapper {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+}
+
+.ticker-content {
+  display: inline-flex;
+  white-space: nowrap;
+  animation: ticker-scroll 90s linear infinite;
+  gap: 4vw;
+}
+
+.ticker-item {
+  display: inline-flex;
+  align-items: center;
+  font-size: 1.2vw;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.ticker-item::before {
+  content: '◆';
+  color: var(--accent-cyan);
+  margin-right: 0.8vw;
+  font-size: 0.9vw;
+}
+
+.ticker-keyword {
+  color: var(--accent-yellow);
+  font-weight: 700;
+  margin-right: 0.5vw;
+  padding: 0.1vw 0.5vw;
+  background: rgba(255, 213, 79, 0.1);
+  border-radius: 0.2vw;
+}
+
+@keyframes ticker-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ============================================
+   メイン2カラムレイアウト
+   ============================================ */
+.dashboard-main {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 1.5vw;
+  padding: 1.5vw 2vw;
+  overflow: hidden;
+  min-height: 0;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 0.8vw;
+  overflow: hidden;
+  min-height: 0;
+}
+
+.column-header {
+  display: flex;
+  align-items: center;
+  gap: 1vw;
+  padding: 1vw 1.5vw;
+  background: var(--bg-tertiary);
+  border-bottom: 2px solid var(--border-color);
+}
+
+.column-priority .column-header {
+  border-bottom-color: var(--accent-red);
+  background: linear-gradient(90deg, rgba(255, 71, 87, 0.15), var(--bg-tertiary));
+}
+
+.column-recent .column-header {
+  border-bottom-color: var(--accent-blue);
+  background: linear-gradient(90deg, rgba(74, 158, 255, 0.15), var(--bg-tertiary));
+}
+
+.column-header h2 {
+  font-size: 1.5vw;
+  font-weight: 700;
+  flex: 1;
+  letter-spacing: 0.05em;
+}
+
+.priority-badge, .category-badge {
+  font-size: 0.85vw;
+  font-weight: 700;
+  padding: 0.4vw 0.8vw;
+  border-radius: 0.3vw;
+  letter-spacing: 0.1em;
+}
+
+.priority-badge.priority-high {
+  background: var(--accent-red);
+  color: white;
+  animation: pulse-red 2s infinite;
+}
+
+.category-badge {
+  background: var(--accent-blue);
+  color: white;
+}
+
+@keyframes pulse-red {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(255, 71, 87, 0.6); }
+  50% { box-shadow: 0 0 0 0.5vw rgba(255, 71, 87, 0); }
+}
+
+.news-count {
+  font-size: 1vw;
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ============================================
+   ニュースリスト
+   ============================================ */
+.news-list {
+  flex: 1;
+  overflow: hidden;
+  padding: 0.5vw;
+  position: relative;
+}
+
+.news-scroll {
+  animation: news-scroll 60s linear infinite;
+}
+
+.news-list:hover .news-scroll {
+  animation-play-state: paused;
+}
+
+@keyframes news-scroll {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-50%); }
+}
+
+.news-item {
+  padding: 1vw 1.2vw;
+  margin-bottom: 0.6vw;
+  background: var(--bg-card);
+  border-left: 0.3vw solid var(--accent-blue);
+  border-radius: 0.4vw;
+  transition: all 0.3s;
+}
+
+.news-item.priority-high {
+  border-left-color: var(--accent-red);
+  background: linear-gradient(90deg, rgba(255, 71, 87, 0.08), var(--bg-card));
+}
+
+.news-item.priority-medium {
+  border-left-color: var(--accent-yellow);
+}
+
+.news-item-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.8vw;
+  margin-bottom: 0.5vw;
+  font-size: 0.85vw;
+}
+
+.source-tag-inline {
+  font-weight: 700;
+  padding: 0.2vw 0.6vw;
+  border-radius: 0.3vw;
+  letter-spacing: 0.05em;
+  font-size: 0.8vw;
+}
+
+.source-meti { background: var(--cat-meti); color: white; }
+.source-maff { background: var(--cat-maff); color: var(--bg-primary); }
+.source-mlit { background: var(--cat-mlit); color: var(--bg-primary); }
+.source-mhlw { background: var(--cat-mhlw); color: white; }
+.source-mof { background: var(--cat-mof); color: white; }
+.source-env { background: var(--cat-env); color: var(--bg-primary); }
+
+.news-date {
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.impact-tag {
+  margin-left: auto;
+  font-size: 0.75vw;
+  padding: 0.15vw 0.5vw;
+  border-radius: 0.2vw;
+  font-weight: 600;
+}
+
+.impact-high {
+  background: rgba(255, 71, 87, 0.2);
+  color: var(--accent-red);
+  border: 1px solid var(--accent-red);
+}
+
+.impact-medium {
+  background: rgba(255, 213, 79, 0.15);
+  color: var(--accent-yellow);
+  border: 1px solid var(--accent-yellow);
+}
+
+.news-title {
+  font-size: 1.15vw;
+  line-height: 1.5;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.news-title .highlight {
+  color: var(--accent-yellow);
+  font-weight: 700;
+  background: rgba(255, 213, 79, 0.12);
+  padding: 0.05vw 0.3vw;
+  border-radius: 0.2vw;
+}
+
+.news-title .highlight-critical {
+  color: var(--accent-orange);
+  background: rgba(255, 138, 61, 0.15);
+}
+
+/* 空状態 */
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: var(--text-muted);
+  font-size: 1.2vw;
+  padding: 2vw;
+}
+
+.empty-state-icon {
+  font-size: 3vw;
+  margin-bottom: 1vw;
+  opacity: 0.4;
+}
+
+/* ============================================
+   フッター
+   ============================================ */
+.dashboard-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8vw 2vw;
+  background: var(--bg-secondary);
+  border-top: 1px solid var(--border-color);
+}
+
+.footer-sources {
+  display: flex;
+  gap: 0.8vw;
+}
+
+.source-tag {
+  font-size: 0.85vw;
+  padding: 0.3vw 0.8vw;
+  background: var(--bg-card);
+  color: var(--text-secondary);
+  border-radius: 0.3vw;
+  border: 1px solid var(--border-color);
+}
+
+.footer-status {
+  display: flex;
+  align-items: center;
+  gap: 0.6vw;
+  font-size: 0.9vw;
+  color: var(--text-secondary);
+  letter-spacing: 0.1em;
+  font-weight: 600;
+}
+
+.status-indicator {
+  width: 0.7vw;
+  height: 0.7vw;
+  border-radius: 50%;
+  background: var(--accent-green);
+  box-shadow: 0 0 10px var(--accent-green);
+  animation: pulse-green 2s infinite;
+}
+
+@keyframes pulse-green {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+/* ============================================
+   スクロール表示の縦フェード
+   ============================================ */
+.news-list::before,
+.news-list::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2vw;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.news-list::before {
+  top: 0;
+  background: linear-gradient(to bottom, var(--bg-secondary), transparent);
+}
+
+.news-list::after {
+  bottom: 0;
+  background: linear-gradient(to top, var(--bg-secondary), transparent);
+}
