@@ -29,12 +29,16 @@ const KEYWORDS = {
 
 // ===== 省庁ラベル =====
 const SOURCE_LABELS = {
-  meti: { name: '経産省', class: 'source-meti' },
-  maff: { name: '農水省', class: 'source-maff' },
-  mlit: { name: '国交省', class: 'source-mlit' },
-  mhlw: { name: '厚労省', class: 'source-mhlw' },
-  mof:  { name: '財務省', class: 'source-mof' },
-  env:  { name: '環境省', class: 'source-env' },
+  kantei:  { name: '官邸',     class: 'source-kantei' },
+  cao:     { name: '内閣府',   class: 'source-cao' },
+  digital: { name: 'デジタル庁', class: 'source-digital' },
+  meti:    { name: '経産省',   class: 'source-meti' },
+  maff:    { name: '農水省',   class: 'source-maff' },
+  mof:     { name: '財務省',   class: 'source-mof' },
+  jftc:    { name: '公取委',   class: 'source-jftc' },
+  mlit:    { name: '国交省',   class: 'source-mlit' },
+  mhlw:    { name: '厚労省',   class: 'source-mhlw' },
+  env:     { name: '環境省',   class: 'source-env' },
 };
 
 // ===== 時計表示 =====
