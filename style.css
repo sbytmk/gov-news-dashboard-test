@@ -346,6 +346,10 @@ body {
 .source-mhlw { background: var(--cat-mhlw); color: white; }
 .source-mof { background: var(--cat-mof); color: white; }
 .source-env { background: var(--cat-env); color: var(--bg-primary); }
+.source-kantei  { background: #ff4757; color: white; }
+.source-cao     { background: #ff6b9d; color: white; }
+.source-digital { background: #5b9bff; color: white; }
+.source-jftc    { background: #00bfa5; color: white; }
 
 .news-date {
   color: var(--text-muted);
