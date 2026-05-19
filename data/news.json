@@ -1,7 +1,13 @@
 {
-  "updatedAt": "2026-05-19T06:59:48.240831+09:00",
-  "count": 5,
+  "updatedAt": "2026-05-19T15:51:32.916421+09:00",
+  "count": 7,
   "items": [
+    {
+      "title": "「化学物質の審査及び製造等の規制に関する法律施行令の一部を改正する政令」が閣議決定されました",
+      "pubDate": "2026-05-19T10:30:00+09:00",
+      "link": "https://www.mhlw.go.jp/stf/newpage_72960.html",
+      "source": "mhlw"
+    },
     {
       "title": "令和８年度第２回化学物質管理に係る専門家検討会を開催します",
       "pubDate": "2026-05-18T14:00:00+09:00",
@@ -18,6 +24,12 @@
       "title": "最低賃金に関する実態調査",
       "pubDate": "2026-05-08T17:00:00+09:00",
       "link": "https://www.mhlw.go.jp/toukei/list/97-1.html",
+      "source": "mhlw"
+    },
+    {
+      "title": "令和８年度第２回薬事審議会化学物質安全対策部会化学物質調査会",
+      "pubDate": "2026-05-08T10:17:00+09:00",
+      "link": "https://www.mhlw.go.jp/stf/newpage_73049.html",
       "source": "mhlw"
     },
     {
