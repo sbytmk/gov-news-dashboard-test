@@ -1,7 +1,25 @@
 {
-  "updatedAt": "2026-05-27T07:17:30.570311+09:00",
-  "count": 7,
+  "updatedAt": "2026-05-27T16:06:47.988841+09:00",
+  "count": 10,
   "items": [
+    {
+      "title": "労働災害発生状況",
+      "pubDate": "2026-05-27T14:00:00+09:00",
+      "link": "https://www.mhlw.go.jp/bunya/roudoukijun/anzeneisei11/rousai-hassei/index.html",
+      "source": "mhlw"
+    },
+    {
+      "title": "令和７年「職場における熱中症による死傷災害の発生状況」(確定値)を公表します",
+      "pubDate": "2026-05-27T14:00:00+09:00",
+      "link": "https://www.mhlw.go.jp/stf/newpage_73330.html",
+      "source": "mhlw"
+    },
+    {
+      "title": "厚生労働省（デジタル・電気・電子区分）",
+      "pubDate": "2026-05-27T10:00:00+09:00",
+      "link": "https://www.mhlw.go.jp/stf/kouseiroudoushou/saiyou/kokka-den/gyomusetumei.html",
+      "source": "mhlw"
+    },
     {
       "title": "労災疾病臨床研究補助金事業",
       "pubDate": "2026-05-25T14:00:00+09:00",
