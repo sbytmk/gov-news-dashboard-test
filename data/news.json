@@ -1,7 +1,19 @@
 {
-  "updatedAt": "2026-06-01T06:55:33.766195+09:00",
+  "updatedAt": "2026-06-01T17:38:10.408520+09:00",
   "count": 10,
   "items": [
+    {
+      "title": "中央最低賃金審議会 (中央最低賃金審議会)",
+      "pubDate": "2026-06-01T13:00:00+09:00",
+      "link": "https://www.mhlw.go.jp/stf/shingi/shingi-tingin_127939.html",
+      "source": "mhlw"
+    },
+    {
+      "title": "官庁合同業務説明会 厚生労働省（デジタル・電気・電子区分）",
+      "pubDate": "2026-06-01T10:00:00+09:00",
+      "link": "https://www.mhlw.go.jp/stf/kouseiroudoushou/saiyou/kokka-den/gousetsu2026.html",
+      "source": "mhlw"
+    },
     {
       "title": "労働災害発生状況",
       "pubDate": "2026-05-29T14:00:00+09:00",
@@ -12,12 +24,6 @@
       "title": "中央最低賃金審議会(目安制度の在り方に関する全員協議会)",
       "pubDate": "2026-05-28T13:00:00+09:00",
       "link": "https://www.mhlw.go.jp/stf/shingi/shingi-tingin_127940.html",
-      "source": "mhlw"
-    },
-    {
-      "title": "中央最低賃金審議会 (中央最低賃金審議会)",
-      "pubDate": "2026-05-28T13:00:00+09:00",
-      "link": "https://www.mhlw.go.jp/stf/shingi/shingi-tingin_127939.html",
       "source": "mhlw"
     },
     {
@@ -54,12 +60,6 @@
       "title": "AIによるサイバー攻撃に関する情報共有と医療機関等における サイバーセキュリティ対策に関する厚生労働省との意見交換について （開催案内）",
       "pubDate": "2026-05-20T14:22:00+09:00",
       "link": "https://www.mhlw.go.jp/stf/newpage_73294.html",
-      "source": "mhlw"
-    },
-    {
-      "title": "第５回「中東情勢の影響を受ける医薬品、医療機器、医療物資等の確保対策本部」",
-      "pubDate": "2026-05-15T15:00:00+09:00",
-      "link": "https://www.mhlw.go.jp/stf/newpage_73206.html",
       "source": "mhlw"
     }
   ]
