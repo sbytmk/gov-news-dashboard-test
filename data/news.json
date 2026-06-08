@@ -1,7 +1,13 @@
 {
-  "updatedAt": "2026-06-08T17:13:08.308672+09:00",
+  "updatedAt": "2026-06-09T07:22:18.411701+09:00",
   "count": 10,
   "items": [
+    {
+      "title": "人事労務マガジン 特集第245号 中小企業事業者の皆さまへ 高年齢者の労働災害防止のための設備改善等を支援する補助金 ～令和8年度「エイジフレンドリー補助金」の受け付けが始まりました～",
+      "pubDate": "2026-06-08T14:50:00+09:00",
+      "link": "https://www.mhlw.go.jp/stf/newpage_73723.html",
+      "source": "mhlw"
+    },
     {
       "title": "HACCP 衛生管理記録アプリの公開について",
       "pubDate": "2026-06-05T09:00:00+09:00",
@@ -54,12 +60,6 @@
       "title": "労災疾病臨床研究補助金事業",
       "pubDate": "2026-05-25T14:00:00+09:00",
       "link": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/roudoukijun/rousai/hojokin.html",
-      "source": "mhlw"
-    },
-    {
-      "title": "「第２回 労働安全衛生法に基づく一般健康診断の検査項目等に関する検討会」を開催します",
-      "pubDate": "2026-05-25T09:58:00+09:00",
-      "link": "https://www.mhlw.go.jp/stf/newpage_73420.html",
       "source": "mhlw"
     }
   ]
