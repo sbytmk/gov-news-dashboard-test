@@ -1,7 +1,13 @@
 {
-  "updatedAt": "2026-06-16T07:59:33.709741+09:00",
-  "count": 4,
+  "updatedAt": "2026-06-16T17:48:53.139983+09:00",
+  "count": 3,
   "items": [
+    {
+      "title": "令和７年「労働災害動向調査（事業所調査（事業所規模100人以上）及び総合工事業調査）」の結果を公表します",
+      "pubDate": "2026-06-16T14:00:00+09:00",
+      "link": "https://www.mhlw.go.jp/toukei/itiran/roudou/saigai/25/",
+      "source": "mhlw"
+    },
     {
       "title": "人事労務マガジン 特集第245号 中小企業事業者の皆さまへ 高年齢者の労働災害防止のための設備改善等を支援する補助金 ～令和8年度「エイジフレンドリー補助金」の受け付けが始まりました～",
       "pubDate": "2026-06-08T14:50:00+09:00",
@@ -12,18 +18,6 @@
       "title": "HACCP 衛生管理記録アプリの公開について",
       "pubDate": "2026-06-05T09:00:00+09:00",
       "link": "https://www.mhlw.go.jp/stf/newpage_73595.html",
-      "source": "mhlw"
-    },
-    {
-      "title": "中央最低賃金審議会 (中央最低賃金審議会)",
-      "pubDate": "2026-06-01T13:00:00+09:00",
-      "link": "https://www.mhlw.go.jp/stf/shingi/shingi-tingin_127939.html",
-      "source": "mhlw"
-    },
-    {
-      "title": "官庁合同業務説明会 厚生労働省（デジタル・電気・電子区分）",
-      "pubDate": "2026-06-01T10:00:00+09:00",
-      "link": "https://www.mhlw.go.jp/stf/kouseiroudoushou/saiyou/kokka-den/gousetsu2026.html",
       "source": "mhlw"
     }
   ]
