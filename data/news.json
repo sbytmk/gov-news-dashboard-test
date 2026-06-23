@@ -1,11 +1,17 @@
 {
-  "updatedAt": "2026-06-23T15:53:40.704690+09:00",
-  "count": 6,
+  "updatedAt": "2026-06-24T07:08:53.928651+09:00",
+  "count": 7,
   "items": [
     {
       "title": "中央最低賃金審議会 (中央最低賃金審議会)",
-      "pubDate": "2026-06-23T15:45:00+09:00",
+      "pubDate": "2026-06-23T18:00:00+09:00",
       "link": "https://www.mhlw.go.jp/stf/shingi/shingi-tingin_127939.html",
+      "source": "mhlw"
+    },
+    {
+      "title": "第73回中央最低賃金審議会 資料",
+      "pubDate": "2026-06-23T16:55:00+09:00",
+      "link": "https://www.mhlw.go.jp/stf/newpage_74002.html",
       "source": "mhlw"
     },
     {
