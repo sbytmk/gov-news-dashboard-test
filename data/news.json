@@ -1,17 +1,29 @@
 {
-  "updatedAt": "2026-06-26T07:18:34.290088+09:00",
-  "count": 8,
+  "updatedAt": "2026-06-26T15:58:17.196488+09:00",
+  "count": 10,
   "items": [
     {
-      "title": "「第12回厚生科学審議会食品衛生監視部会」の開催について",
-      "pubDate": "2026-06-24T14:00:00+09:00",
-      "link": "https://www.mhlw.go.jp/stf/newpage_73927.html",
+      "title": "令和８年度中央最低賃金審議会目安に関する小委員会（第１回）資料",
+      "pubDate": "2026-06-26T11:31:00+09:00",
+      "link": "https://www.mhlw.go.jp/stf/newpage_74088.html",
+      "source": "mhlw"
+    },
+    {
+      "title": "第74回中央最低賃金審議会 資料",
+      "pubDate": "2026-06-26T11:30:00+09:00",
+      "link": "https://www.mhlw.go.jp/stf/newpage_74079.html",
       "source": "mhlw"
     },
     {
       "title": "中央最低賃金審議会 (中央最低賃金審議会)",
-      "pubDate": "2026-06-23T18:00:00+09:00",
+      "pubDate": "2026-06-26T11:30:00+09:00",
       "link": "https://www.mhlw.go.jp/stf/shingi/shingi-tingin_127939.html",
+      "source": "mhlw"
+    },
+    {
+      "title": "「第12回厚生科学審議会食品衛生監視部会」の開催について",
+      "pubDate": "2026-06-24T14:00:00+09:00",
+      "link": "https://www.mhlw.go.jp/stf/newpage_73927.html",
       "source": "mhlw"
     },
     {
