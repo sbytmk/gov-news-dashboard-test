@@ -1,7 +1,19 @@
 {
-  "updatedAt": "2026-06-30T07:06:26.334434+09:00",
+  "updatedAt": "2026-06-30T15:58:07.569432+09:00",
   "count": 10,
   "items": [
+    {
+      "title": "労働災害発生状況",
+      "pubDate": "2026-06-30T14:00:00+09:00",
+      "link": "https://www.mhlw.go.jp/bunya/roudoukijun/anzeneisei11/rousai-hassei/index.html",
+      "source": "mhlw"
+    },
+    {
+      "title": "「第３回 労働安全衛生法に基づく一般健康診断の検査項目等に関する検討会」を開催します",
+      "pubDate": "2026-06-30T14:00:00+09:00",
+      "link": "https://www.mhlw.go.jp/stf/newpage_74071.html",
+      "source": "mhlw"
+    },
     {
       "title": "令和８年度中央最低賃金審議会目安に関する小委員会（第１回）資料",
       "pubDate": "2026-06-26T11:31:00+09:00",
@@ -27,21 +39,9 @@
       "source": "mhlw"
     },
     {
-      "title": "第73回中央最低賃金審議会 資料",
-      "pubDate": "2026-06-23T16:55:00+09:00",
-      "link": "https://www.mhlw.go.jp/stf/newpage_74002.html",
-      "source": "mhlw"
-    },
-    {
-      "title": "中央最低賃金審議会(目安制度の在り方に関する全員協議会)",
-      "pubDate": "2026-06-23T15:00:00+09:00",
-      "link": "https://www.mhlw.go.jp/stf/shingi/shingi-tingin_127940.html",
-      "source": "mhlw"
-    },
-    {
-      "title": "「第93回 労働政策審議会勤労者生活分科会中小企業退職金共済部会」を開催します（開催案内）",
-      "pubDate": "2026-06-23T14:00:00+09:00",
-      "link": "https://www.mhlw.go.jp/stf/newpage_73820.html",
+      "title": "人事労務マガジン 特集第245号 中小企業事業者の皆さまへ 高年齢者の労働災害防止のための設備改善等を支援する補助金 ～令和8年度「エイジフレンドリー補助金」の受け付けが始まりました～",
+      "pubDate": "2026-06-17T14:50:00+09:00",
+      "link": "https://www.mhlw.go.jp/stf/newpage_73723.html",
       "source": "mhlw"
     },
     {
