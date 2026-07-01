@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-01T07:13:19.301992+09:00",
+  "updatedAt": "2026-07-01T16:14:27.953153+09:00",
   "count": 10,
   "items": [
     {
@@ -33,6 +33,12 @@
       "source": "mhlw"
     },
     {
+      "title": "第74回中央最低賃金審議会 資料",
+      "pubDate": "2026-06-26T11:30:00+09:00",
+      "link": "https://www.mhlw.go.jp/stf/newpage_74079.html",
+      "source": "mhlw"
+    },
+    {
       "title": "「第12回厚生科学審議会食品衛生監視部会」の開催について",
       "pubDate": "2026-06-24T14:00:00+09:00",
       "link": "https://www.mhlw.go.jp/stf/newpage_73927.html",
@@ -54,12 +60,6 @@
       "title": "「第11回厚生科学審議会食品衛生監視部会」の開催について",
       "pubDate": "2026-06-17T14:00:00+09:00",
       "link": "https://www.mhlw.go.jp/stf/newpage_73635.html",
-      "source": "mhlw"
-    },
-    {
-      "title": "令和７年「労働災害動向調査（事業所調査（事業所規模100人以上）及び総合工事業調査）」の結果を公表します",
-      "pubDate": "2026-06-16T14:00:00+09:00",
-      "link": "https://www.mhlw.go.jp/toukei/itiran/roudou/saigai/25/",
       "source": "mhlw"
     }
   ]
