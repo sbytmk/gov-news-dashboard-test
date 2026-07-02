@@ -1,7 +1,13 @@
 {
-  "updatedAt": "2026-07-02T07:14:58.393944+09:00",
+  "updatedAt": "2026-07-02T15:43:19.842510+09:00",
   "count": 10,
   "items": [
+    {
+      "title": "令和８年度社会福祉施設等施設整備費補助金の内示について（令和８年度当初予算等）",
+      "pubDate": "2026-07-02T14:00:00+09:00",
+      "link": "https://www.mhlw.go.jp/stf/newpage_74201.html",
+      "source": "mhlw"
+    },
     {
       "title": "令和８年度医療施設等施設整備費補助金の交付額の内示について",
       "pubDate": "2026-06-30T17:00:00+09:00",
@@ -39,27 +45,21 @@
       "source": "mhlw"
     },
     {
+      "title": "中央最低賃金審議会 (中央最低賃金審議会)",
+      "pubDate": "2026-06-26T11:30:00+09:00",
+      "link": "https://www.mhlw.go.jp/stf/shingi/shingi-tingin_127939.html",
+      "source": "mhlw"
+    },
+    {
       "title": "「第12回厚生科学審議会食品衛生監視部会」の開催について",
       "pubDate": "2026-06-24T14:00:00+09:00",
       "link": "https://www.mhlw.go.jp/stf/newpage_73927.html",
       "source": "mhlw"
     },
     {
-      "title": "人事労務マガジン 特集第245号 中小企業事業者の皆さまへ 高年齢者の労働災害防止のための設備改善等を支援する補助金 ～令和8年度「エイジフレンドリー補助金」の受け付けが始まりました～",
-      "pubDate": "2026-06-17T14:50:00+09:00",
-      "link": "https://www.mhlw.go.jp/stf/newpage_73723.html",
-      "source": "mhlw"
-    },
-    {
-      "title": "「令和７年度 石綿による疾病に関する労災保険給付などの請求・決定状況まとめ（速報値）」を公表します",
-      "pubDate": "2026-06-17T14:00:00+09:00",
-      "link": "https://www.mhlw.go.jp/stf/newpage_73803.html",
-      "source": "mhlw"
-    },
-    {
-      "title": "「第11回厚生科学審議会食品衛生監視部会」の開催について",
-      "pubDate": "2026-06-17T14:00:00+09:00",
-      "link": "https://www.mhlw.go.jp/stf/newpage_73635.html",
+      "title": "第73回中央最低賃金審議会 資料",
+      "pubDate": "2026-06-23T16:55:00+09:00",
+      "link": "https://www.mhlw.go.jp/stf/newpage_74002.html",
       "source": "mhlw"
     }
   ]
