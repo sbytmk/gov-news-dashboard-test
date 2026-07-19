@@ -1,7 +1,19 @@
 {
-  "updatedAt": "2026-07-17T14:44:36.289115+09:00",
+  "updatedAt": "2026-07-20T06:45:18.084046+09:00",
   "count": 10,
   "items": [
+    {
+      "title": "中央最低賃金審議会 (目安に関する小委員会)",
+      "pubDate": "2026-07-17T18:20:00+09:00",
+      "link": "https://www.mhlw.go.jp/stf/shingi/shingi-tingin_127941.html",
+      "source": "mhlw"
+    },
+    {
+      "title": "令和８年度（令和７年度補正予算からの繰越分）医療施設等施設整備費補助金の交付額の二次内示について",
+      "pubDate": "2026-07-17T16:00:00+09:00",
+      "link": "https://www.mhlw.go.jp/stf/newpage_74759.html",
+      "source": "mhlw"
+    },
     {
       "title": "令和８年度中央最低賃金審議会目安に関する小委員会（第３回）資料",
       "pubDate": "2026-07-17T14:00:00+09:00",
@@ -12,12 +24,6 @@
       "title": "令和８年度第４回薬事審議会化学物質安全対策部会化学物質調査会",
       "pubDate": "2026-07-17T14:00:00+09:00",
       "link": "https://www.mhlw.go.jp/stf/newpage_74493.html",
-      "source": "mhlw"
-    },
-    {
-      "title": "中央最低賃金審議会 (目安に関する小委員会)",
-      "pubDate": "2026-07-17T14:00:00+09:00",
-      "link": "https://www.mhlw.go.jp/stf/shingi/shingi-tingin_127941.html",
       "source": "mhlw"
     },
     {
@@ -54,12 +60,6 @@
       "title": "令和８年度医師の働き方改革の推進等に関する検討会",
       "pubDate": "2026-07-08T14:00:00+09:00",
       "link": "https://www.mhlw.go.jp/stf/newpage_74108.html",
-      "source": "mhlw"
-    },
-    {
-      "title": "令和８年度老人保健健康増進等事業（老人保健事業推進費等補助金）の国庫補助協議（追加公募）について",
-      "pubDate": "2026-07-03T15:09:00+09:00",
-      "link": "https://www.mhlw.go.jp/stf/newpage_74285.html",
       "source": "mhlw"
     }
   ]
