@@ -1,7 +1,13 @@
 {
-  "updatedAt": "2026-07-21T14:53:52.455735+09:00",
+  "updatedAt": "2026-07-22T07:00:02.107040+09:00",
   "count": 10,
   "items": [
+    {
+      "title": "第10回匿名感染症関連情報の第三者提供に関する小委員会（持ち回り）を開催しました",
+      "pubDate": "2026-07-21T15:00:00+09:00",
+      "link": "https://www.mhlw.go.jp/stf/newpage_73969.html",
+      "source": "mhlw"
+    },
     {
       "title": "中央最低賃金審議会 (目安に関する小委員会)",
       "pubDate": "2026-07-17T18:20:00+09:00",
@@ -54,12 +60,6 @@
       "title": "第１回 令和８年度医師の働き方改革の推進等に関する検討会：開催案内",
       "pubDate": "2026-07-08T14:00:00+09:00",
       "link": "https://www.mhlw.go.jp/stf/newpage_74111.html",
-      "source": "mhlw"
-    },
-    {
-      "title": "令和８年度医師の働き方改革の推進等に関する検討会",
-      "pubDate": "2026-07-08T14:00:00+09:00",
-      "link": "https://www.mhlw.go.jp/stf/newpage_74108.html",
       "source": "mhlw"
     }
   ]
