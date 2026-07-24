@@ -1,7 +1,13 @@
 {
-  "updatedAt": "2026-07-24T07:00:29.033708+09:00",
+  "updatedAt": "2026-07-24T14:52:31.459554+09:00",
   "count": 9,
   "items": [
+    {
+      "title": "令和８年度第１回薬事審議会 化学物質安全対策部会（ペーパーレス）を開催します",
+      "pubDate": "2026-07-24T14:00:00+09:00",
+      "link": "https://www.mhlw.go.jp/stf/newpage_74609.html",
+      "source": "mhlw"
+    },
     {
       "title": "中央最低賃金審議会 (目安に関する小委員会)",
       "pubDate": "2026-07-23T22:10:00+09:00",
@@ -48,12 +54,6 @@
       "title": "令和８年度中央最低賃金審議会目安に関する小委員会（第２回）資料",
       "pubDate": "2026-07-10T13:00:00+09:00",
       "link": "https://www.mhlw.go.jp/stf/newpage_74463.html",
-      "source": "mhlw"
-    },
-    {
-      "title": "令和８年度第３回化学物質管理に係る専門家検討会を開催します",
-      "pubDate": "2026-07-09T14:00:00+09:00",
-      "link": "https://www.mhlw.go.jp/stf/newpage_74297.html",
       "source": "mhlw"
     }
   ]
