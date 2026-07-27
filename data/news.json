@@ -1,17 +1,23 @@
 {
-  "updatedAt": "2026-07-27T06:54:14.620119+09:00",
-  "count": 9,
+  "updatedAt": "2026-07-27T15:33:06.838434+09:00",
+  "count": 10,
   "items": [
     {
-      "title": "令和８年度第１回薬事審議会 化学物質安全対策部会（ペーパーレス）を開催します",
-      "pubDate": "2026-07-24T14:00:00+09:00",
-      "link": "https://www.mhlw.go.jp/stf/newpage_74609.html",
+      "title": "令和８年度中央最低賃金審議会目安に関する小委員会（第５回）資料",
+      "pubDate": "2026-07-27T10:00:00+09:00",
+      "link": "https://www.mhlw.go.jp/stf/newpage_74915.html",
       "source": "mhlw"
     },
     {
       "title": "中央最低賃金審議会 (目安に関する小委員会)",
-      "pubDate": "2026-07-23T22:10:00+09:00",
+      "pubDate": "2026-07-27T10:00:00+09:00",
       "link": "https://www.mhlw.go.jp/stf/shingi/shingi-tingin_127941.html",
+      "source": "mhlw"
+    },
+    {
+      "title": "令和８年度第１回薬事審議会 化学物質安全対策部会（ペーパーレス）を開催します",
+      "pubDate": "2026-07-24T14:00:00+09:00",
+      "link": "https://www.mhlw.go.jp/stf/newpage_74609.html",
       "source": "mhlw"
     },
     {
@@ -45,15 +51,15 @@
       "source": "mhlw"
     },
     {
-      "title": "第１回 令和８年度医師の働き方改革の推進等に関する検討会：資料",
-      "pubDate": "2026-07-13T10:00:00+09:00",
-      "link": "https://www.mhlw.go.jp/stf/newpage_74139.html",
+      "title": "エッセンシャルワーカー業職種の生産性向上に向けた労働行政としての支援のあり方に関する検討会",
+      "pubDate": "2026-07-14T18:02:00+09:00",
+      "link": "https://www.mhlw.go.jp/stf/newpage_74633.html",
       "source": "mhlw"
     },
     {
-      "title": "令和８年度中央最低賃金審議会目安に関する小委員会（第２回）資料",
-      "pubDate": "2026-07-10T13:00:00+09:00",
-      "link": "https://www.mhlw.go.jp/stf/newpage_74463.html",
+      "title": "第１回 令和８年度医師の働き方改革の推進等に関する検討会：資料",
+      "pubDate": "2026-07-13T10:00:00+09:00",
+      "link": "https://www.mhlw.go.jp/stf/newpage_74139.html",
       "source": "mhlw"
     }
   ]
