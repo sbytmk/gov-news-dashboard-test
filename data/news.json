@@ -1,7 +1,13 @@
 {
-  "updatedAt": "2026-07-29T14:55:02.808149+09:00",
+  "updatedAt": "2026-07-30T06:55:02.016888+09:00",
   "count": 10,
   "items": [
+    {
+      "title": "令和８年熊本地震を受けた食品表示法に基づく食品表示基準の運用について",
+      "pubDate": "2026-07-29T16:32:00+09:00",
+      "link": "https://www.mhlw.go.jp/stf/newpage_75067.html",
+      "source": "mhlw"
+    },
     {
       "title": "中央最低賃金審議会 (中央最低賃金審議会)",
       "pubDate": "2026-07-29T02:00:00+09:00",
@@ -42,12 +48,6 @@
       "title": "令和８年度第１回薬事審議会 化学物質安全対策部会（ペーパーレス）を開催します",
       "pubDate": "2026-07-24T14:00:00+09:00",
       "link": "https://www.mhlw.go.jp/stf/newpage_74609.html",
-      "source": "mhlw"
-    },
-    {
-      "title": "第１回障害福祉分野における人材確保・生産性向上に関する検討会（資料）",
-      "pubDate": "2026-07-23T16:31:00+09:00",
-      "link": "https://www.mhlw.go.jp/stf/newpage_74877.html",
       "source": "mhlw"
     },
     {
