@@ -1,7 +1,25 @@
 {
-  "updatedAt": "2026-07-31T07:07:51.702707+09:00",
+  "updatedAt": "2026-07-31T15:16:13.816399+09:00",
   "count": 10,
   "items": [
+    {
+      "title": "労働災害発生状況",
+      "pubDate": "2026-07-31T14:00:00+09:00",
+      "link": "https://www.mhlw.go.jp/bunya/roudoukijun/anzeneisei11/rousai-hassei/index.html",
+      "source": "mhlw"
+    },
+    {
+      "title": "令和８年度第４回化学物質管理に係る専門家検討会を開催します",
+      "pubDate": "2026-07-31T14:00:00+09:00",
+      "link": "https://www.mhlw.go.jp/stf/newpage_75092.html",
+      "source": "mhlw"
+    },
+    {
+      "title": "令和８年度「全国労働衛生週間」を10月に実施",
+      "pubDate": "2026-07-31T14:00:00+09:00",
+      "link": "https://www.mhlw.go.jp/stf/newpage_74929.html",
+      "source": "mhlw"
+    },
     {
       "title": "令和８年熊本地震を受けた食品表示法に基づく食品表示基準の運用について",
       "pubDate": "2026-07-29T16:32:00+09:00",
@@ -36,24 +54,6 @@
       "title": "中央最低賃金審議会 (目安に関する小委員会)",
       "pubDate": "2026-07-28T10:00:00+09:00",
       "link": "https://www.mhlw.go.jp/stf/shingi/shingi-tingin_127941.html",
-      "source": "mhlw"
-    },
-    {
-      "title": "令和８年度中央最低賃金審議会目安に関する小委員会（第５回）資料",
-      "pubDate": "2026-07-27T10:00:00+09:00",
-      "link": "https://www.mhlw.go.jp/stf/newpage_74915.html",
-      "source": "mhlw"
-    },
-    {
-      "title": "令和８年度第１回薬事審議会 化学物質安全対策部会（ペーパーレス）を開催します",
-      "pubDate": "2026-07-24T14:00:00+09:00",
-      "link": "https://www.mhlw.go.jp/stf/newpage_74609.html",
-      "source": "mhlw"
-    },
-    {
-      "title": "第１回障害福祉分野における人材確保・生産性向上に関する検討会（資料）",
-      "pubDate": "2026-07-23T16:31:00+09:00",
-      "link": "https://www.mhlw.go.jp/stf/newpage_74877.html",
       "source": "mhlw"
     },
     {
