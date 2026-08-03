@@ -1,7 +1,13 @@
 {
-  "updatedAt": "2026-08-03T06:50:18.249065+09:00",
+  "updatedAt": "2026-08-03T15:26:38.400402+09:00",
   "count": 10,
   "items": [
+    {
+      "title": "平成30年食品衛生法改正の施行後５年を目途とした検討のとりまとめ",
+      "pubDate": "2026-07-31T16:00:00+09:00",
+      "link": "https://www.mhlw.go.jp/stf/newpage_75197.html",
+      "source": "mhlw"
+    },
     {
       "title": "労働災害発生状況",
       "pubDate": "2026-07-31T14:00:00+09:00",
@@ -48,12 +54,6 @@
       "title": "令和８年度中央最低賃金審議会目安に関する小委員会（第６回）資料",
       "pubDate": "2026-07-28T10:00:00+09:00",
       "link": "https://www.mhlw.go.jp/stf/newpage_74965.html",
-      "source": "mhlw"
-    },
-    {
-      "title": "中央最低賃金審議会 (目安に関する小委員会)",
-      "pubDate": "2026-07-28T10:00:00+09:00",
-      "link": "https://www.mhlw.go.jp/stf/shingi/shingi-tingin_127941.html",
       "source": "mhlw"
     },
     {
