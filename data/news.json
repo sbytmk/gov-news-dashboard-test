@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-06T07:07:32.174015+09:00",
+  "updatedAt": "2026-08-06T14:51:54.438276+09:00",
   "count": 10,
   "items": [
     {
@@ -33,12 +33,6 @@
       "source": "mhlw"
     },
     {
-      "title": "令和８年度「全国労働衛生週間」を10月に実施",
-      "pubDate": "2026-07-31T14:00:00+09:00",
-      "link": "https://www.mhlw.go.jp/stf/newpage_74929.html",
-      "source": "mhlw"
-    },
-    {
       "title": "令和８年熊本地震を受けた食品表示法に基づく食品表示基準の運用について",
       "pubDate": "2026-07-29T16:32:00+09:00",
       "link": "https://www.mhlw.go.jp/stf/newpage_75067.html",
@@ -60,6 +54,12 @@
       "title": "「労働安全衛生法に基づく化学物質管理に関する説明会」の開催について",
       "pubDate": "2026-07-28T17:00:00+09:00",
       "link": "https://www.mhlw.go.jp/stf/newpage_74553.html",
+      "source": "mhlw"
+    },
+    {
+      "title": "令和８年度中央最低賃金審議会目安に関する小委員会（第６回）資料",
+      "pubDate": "2026-07-28T10:00:00+09:00",
+      "link": "https://www.mhlw.go.jp/stf/newpage_74965.html",
       "source": "mhlw"
     }
   ]
