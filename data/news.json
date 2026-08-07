@@ -1,7 +1,13 @@
 {
-  "updatedAt": "2026-08-06T14:51:54.438276+09:00",
+  "updatedAt": "2026-08-07T09:59:52.143968+09:00",
   "count": 10,
   "items": [
+    {
+      "title": "令和8年度 厚生労働科学研究費補助金公募要項（3次）",
+      "pubDate": "2026-08-07T09:00:00+09:00",
+      "link": "https://www.mhlw.go.jp/stf/newpage_75086.html",
+      "source": "mhlw"
+    },
     {
       "title": "第130回労働政策審議会労働条件分科会労災保険部会資料",
       "pubDate": "2026-08-04T12:22:00+09:00",
@@ -54,12 +60,6 @@
       "title": "「労働安全衛生法に基づく化学物質管理に関する説明会」の開催について",
       "pubDate": "2026-07-28T17:00:00+09:00",
       "link": "https://www.mhlw.go.jp/stf/newpage_74553.html",
-      "source": "mhlw"
-    },
-    {
-      "title": "令和８年度中央最低賃金審議会目安に関する小委員会（第６回）資料",
-      "pubDate": "2026-07-28T10:00:00+09:00",
-      "link": "https://www.mhlw.go.jp/stf/newpage_74965.html",
       "source": "mhlw"
     }
   ]
