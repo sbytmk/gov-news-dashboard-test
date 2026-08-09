@@ -1,7 +1,13 @@
 {
-  "updatedAt": "2026-08-07T13:56:36.333079+09:00",
+  "updatedAt": "2026-08-10T06:25:18.385137+09:00",
   "count": 10,
   "items": [
+    {
+      "title": "令和７年「労働安全衛生調査（実態調査）」の結果を公表します",
+      "pubDate": "2026-08-07T14:00:00+09:00",
+      "link": "https://www.mhlw.go.jp/toukei/list/r07-46-50b.html",
+      "source": "mhlw"
+    },
     {
       "title": "令和8年度 厚生労働科学研究費補助金公募要項（3次）",
       "pubDate": "2026-08-07T09:00:00+09:00",
@@ -48,12 +54,6 @@
       "title": "中央最低賃金審議会 (中央最低賃金審議会)",
       "pubDate": "2026-07-29T02:00:00+09:00",
       "link": "https://www.mhlw.go.jp/stf/shingi/shingi-tingin_127939.html",
-      "source": "mhlw"
-    },
-    {
-      "title": "第75回中央最低賃金審議会 資料",
-      "pubDate": "2026-07-28T21:45:00+09:00",
-      "link": "https://www.mhlw.go.jp/stf/newpage_75021.html",
       "source": "mhlw"
     },
     {
