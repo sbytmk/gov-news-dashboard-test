@@ -1,7 +1,13 @@
 {
-  "updatedAt": "2026-08-17T12:52:05.395598+09:00",
-  "count": 8,
+  "updatedAt": "2026-08-18T06:19:55.455683+09:00",
+  "count": 6,
   "items": [
+    {
+      "title": "建設業・運輸業の働き方改革に向けた新PR動画を公開",
+      "pubDate": "2026-08-17T19:23:00+09:00",
+      "link": "https://www.mhlw.go.jp/stf/newpage_74962.html",
+      "source": "mhlw"
+    },
     {
       "title": "輸入食品に対する検査命令の実施 （コートジボワール産ごまの種子）",
       "pubDate": "2026-08-13T16:00:00+09:00",
@@ -30,24 +36,6 @@
       "title": "最低賃金に関するデータ・統計",
       "pubDate": "2026-08-04T10:00:00+09:00",
       "link": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/toukei_00001.html",
-      "source": "mhlw"
-    },
-    {
-      "title": "平成30年食品衛生法改正の施行後５年を目途とした検討のとりまとめ",
-      "pubDate": "2026-07-31T16:00:00+09:00",
-      "link": "https://www.mhlw.go.jp/stf/newpage_75197.html",
-      "source": "mhlw"
-    },
-    {
-      "title": "労働災害発生状況",
-      "pubDate": "2026-07-31T14:00:00+09:00",
-      "link": "https://www.mhlw.go.jp/bunya/roudoukijun/anzeneisei11/rousai-hassei/index.html",
-      "source": "mhlw"
-    },
-    {
-      "title": "令和８年度第４回化学物質管理に係る専門家検討会を開催します",
-      "pubDate": "2026-07-31T14:00:00+09:00",
-      "link": "https://www.mhlw.go.jp/stf/newpage_75092.html",
       "source": "mhlw"
     }
   ]
