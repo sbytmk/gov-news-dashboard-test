@@ -1,11 +1,17 @@
 {
-  "updatedAt": "2026-08-25T12:50:31.316745+09:00",
-  "count": 3,
+  "updatedAt": "2026-08-26T06:21:38.713581+09:00",
+  "count": 4,
   "items": [
     {
       "title": "令和８年熊本地震に伴う雇用調整助成金の特例を実施します",
       "pubDate": "2026-08-20T18:00:00+09:00",
       "link": "https://www.mhlw.go.jp/stf/newpage_75665.html",
+      "source": "mhlw"
+    },
+    {
+      "title": "第40回厚生科学審議会予防接種・ワクチン分科会研究開発及び生産・流通部会 資料",
+      "pubDate": "2026-08-19T18:53:00+09:00",
+      "link": "https://www.mhlw.go.jp/stf/newpage_75667.html",
       "source": "mhlw"
     },
     {
