@@ -1,7 +1,13 @@
 {
-  "updatedAt": "2026-08-27T22:55:56.234534+09:00",
+  "updatedAt": "2026-08-28T14:03:17.166276+09:00",
   "count": 4,
   "items": [
+    {
+      "title": "インフルエンザの発生状況を更新しました",
+      "pubDate": "2026-08-28T13:55:00+09:00",
+      "link": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/kenkou/kekkaku-kansenshou01/houdou.html",
+      "source": "mhlw"
+    },
     {
       "title": "令和８年熊本地震に伴う雇用調整助成金の特例を実施します",
       "pubDate": "2026-08-20T18:00:00+09:00",
@@ -18,12 +24,6 @@
       "title": "建設業・運輸業の働き方改革に向けた新PR動画を公開",
       "pubDate": "2026-08-17T19:23:00+09:00",
       "link": "https://www.mhlw.go.jp/stf/newpage_74962.html",
-      "source": "mhlw"
-    },
-    {
-      "title": "輸入食品に対する検査命令の実施 （コートジボワール産ごまの種子）",
-      "pubDate": "2026-08-13T16:00:00+09:00",
-      "link": "https://www.mhlw.go.jp/stf/newpage_75455.html",
       "source": "mhlw"
     }
   ]
