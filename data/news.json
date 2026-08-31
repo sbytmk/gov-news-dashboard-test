@@ -1,7 +1,13 @@
 {
-  "updatedAt": "2026-08-31T08:03:49.546057+09:00",
-  "count": 7,
+  "updatedAt": "2026-08-31T18:28:21.079216+09:00",
+  "count": 8,
   "items": [
+    {
+      "title": "労働災害発生状況",
+      "pubDate": "2026-08-31T14:00:00+09:00",
+      "link": "https://www.mhlw.go.jp/bunya/roudoukijun/anzeneisei11/rousai-hassei/index.html",
+      "source": "mhlw"
+    },
     {
       "title": "輸入食品に対する検査命令の実施 （トーゴ産ごまの種子）",
       "pubDate": "2026-08-28T16:00:00+09:00",
