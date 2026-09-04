@@ -1,7 +1,13 @@
 {
-  "updatedAt": "2026-09-04T07:56:08.865272+09:00",
-  "count": 7,
+  "updatedAt": "2026-09-04T16:49:00.455827+09:00",
+  "count": 6,
   "items": [
+    {
+      "title": "インフルエンザの発生状況を更新しました",
+      "pubDate": "2026-09-04T13:55:00+09:00",
+      "link": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/kenkou/kekkaku-kansenshou01/houdou.html",
+      "source": "mhlw"
+    },
     {
       "title": "令和８年度医薬品等審査迅速化事業費補助金（リアルワールドデータ活用促進事業）公募要領",
       "pubDate": "2026-09-01T10:00:00+09:00",
@@ -30,18 +36,6 @@
       "title": "令和８年度第５回化学物質管理に係る専門家検討会を開催します",
       "pubDate": "2026-08-28T14:00:00+09:00",
       "link": "https://www.mhlw.go.jp/stf/newpage_75727.html",
-      "source": "mhlw"
-    },
-    {
-      "title": "インフルエンザの発生状況を更新しました",
-      "pubDate": "2026-08-28T13:55:00+09:00",
-      "link": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/kenkou/kekkaku-kansenshou01/houdou.html",
-      "source": "mhlw"
-    },
-    {
-      "title": "令和８年熊本地震に伴う雇用調整助成金の特例を実施します",
-      "pubDate": "2026-08-20T18:00:00+09:00",
-      "link": "https://www.mhlw.go.jp/stf/newpage_75665.html",
       "source": "mhlw"
     }
   ]
