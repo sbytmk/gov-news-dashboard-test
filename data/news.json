@@ -1,7 +1,13 @@
 {
-  "updatedAt": "2026-09-07T07:38:14.087139+09:00",
-  "count": 6,
+  "updatedAt": "2026-09-07T17:03:02.127643+09:00",
+  "count": 8,
   "items": [
+    {
+      "title": "第２回 令和８年度医師の働き方改革の推進等に関する検討会：開催案内",
+      "pubDate": "2026-09-07T14:00:00+09:00",
+      "link": "https://www.mhlw.go.jp/stf/newpage_75971.html",
+      "source": "mhlw"
+    },
     {
       "title": "インフルエンザの発生状況を更新しました",
       "pubDate": "2026-09-04T13:55:00+09:00",
@@ -12,6 +18,12 @@
       "title": "令和８年度医薬品等審査迅速化事業費補助金（リアルワールドデータ活用促進事業）公募要領",
       "pubDate": "2026-09-01T10:00:00+09:00",
       "link": "https://www.mhlw.go.jp/stf/newpage_75749.html",
+      "source": "mhlw"
+    },
+    {
+      "title": "令和７年度第９回薬事審議会化学物質安全対策部会化学物質調査会",
+      "pubDate": "2026-08-31T15:03:00+09:00",
+      "link": "https://www.mhlw.go.jp/stf/newpage_75906.html",
       "source": "mhlw"
     },
     {
