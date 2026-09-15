@@ -1,7 +1,13 @@
 {
-  "updatedAt": "2026-09-15T08:39:39.063246+09:00",
-  "count": 10,
+  "updatedAt": "2026-09-15T17:28:51.018656+09:00",
+  "count": 9,
   "items": [
+    {
+      "title": "第14回ASEAN+3労働大臣会合",
+      "pubDate": "2026-09-15T10:00:00+09:00",
+      "link": "https://www.mhlw.go.jp/stf/photo_report/2026/ph0827-01.html",
+      "source": "mhlw"
+    },
     {
       "title": "「食品衛生監視部会伝達性海綿状脳症対策に関する小委員会」の開催について",
       "pubDate": "2026-09-11T14:00:00+09:00",
@@ -48,18 +54,6 @@
       "title": "令和８年度医薬品等審査迅速化事業費補助金（リアルワールドデータ活用促進事業）公募要領",
       "pubDate": "2026-09-01T10:00:00+09:00",
       "link": "https://www.mhlw.go.jp/stf/newpage_75749.html",
-      "source": "mhlw"
-    },
-    {
-      "title": "令和７年度第９回薬事審議会化学物質安全対策部会化学物質調査会",
-      "pubDate": "2026-08-31T15:03:00+09:00",
-      "link": "https://www.mhlw.go.jp/stf/newpage_75906.html",
-      "source": "mhlw"
-    },
-    {
-      "title": "労働災害発生状況",
-      "pubDate": "2026-08-31T14:00:00+09:00",
-      "link": "https://www.mhlw.go.jp/bunya/roudoukijun/anzeneisei11/rousai-hassei/index.html",
       "source": "mhlw"
     }
   ]
