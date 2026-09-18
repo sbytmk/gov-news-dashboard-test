@@ -1,7 +1,19 @@
 {
-  "updatedAt": "2026-09-18T08:19:35.138800+09:00",
-  "count": 9,
+  "updatedAt": "2026-09-18T17:03:20.253660+09:00",
+  "count": 10,
   "items": [
+    {
+      "title": "毎年10月は中小企業退職金共済制度の「加入促進強化月間」です",
+      "pubDate": "2026-09-18T14:00:00+09:00",
+      "link": "https://www.mhlw.go.jp/stf/newpage_76152.html",
+      "source": "mhlw"
+    },
+    {
+      "title": "インフルエンザの発生状況を更新しました",
+      "pubDate": "2026-09-18T13:55:00+09:00",
+      "link": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/kenkou/kekkaku-kansenshou01/houdou.html",
+      "source": "mhlw"
+    },
     {
       "title": "人事労務マガジン 特集第248号 「働き方改革推進支援セミナー2026秋」を10月から開催します",
       "pubDate": "2026-09-16T10:00:00+09:00",
@@ -18,12 +30,6 @@
       "title": "「食品衛生監視部会伝達性海綿状脳症対策に関する小委員会」の開催について",
       "pubDate": "2026-09-11T14:00:00+09:00",
       "link": "https://www.mhlw.go.jp/stf/other-kenkou_128610_00042.html",
-      "source": "mhlw"
-    },
-    {
-      "title": "インフルエンザの発生状況を更新しました",
-      "pubDate": "2026-09-11T13:55:00+09:00",
-      "link": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/kenkou/kekkaku-kansenshou01/houdou.html",
       "source": "mhlw"
     },
     {
