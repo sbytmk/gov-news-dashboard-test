@@ -1,7 +1,19 @@
 {
-  "updatedAt": "2026-09-18T17:03:20.253660+09:00",
+  "updatedAt": "2026-09-21T07:53:29.657256+09:00",
   "count": 10,
   "items": [
+    {
+      "title": "労災保険あん摩マッサージ指圧師、はり師及びきゅう師施術料金算定基準について（令和８年度）",
+      "pubDate": "2026-09-18T14:24:00+09:00",
+      "link": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/roudoukijun/rousai_shinryouhi/kaitei0604_00014.html",
+      "source": "mhlw"
+    },
+    {
+      "title": "労災保険柔道整復師施術料金算定基準について（令和８年度）",
+      "pubDate": "2026-09-18T14:18:00+09:00",
+      "link": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/roudoukijun/rousai_shinryouhi/kaitei0604_00013.html",
+      "source": "mhlw"
+    },
     {
       "title": "毎年10月は中小企業退職金共済制度の「加入促進強化月間」です",
       "pubDate": "2026-09-18T14:00:00+09:00",
@@ -45,21 +57,9 @@
       "source": "mhlw"
     },
     {
-      "title": "第２回 令和８年度医師の働き方改革の推進等に関する検討会：資料",
-      "pubDate": "2026-09-09T14:00:00+09:00",
-      "link": "https://www.mhlw.go.jp/stf/newpage_76089.html",
-      "source": "mhlw"
-    },
-    {
       "title": "第131回労働政策審議会労働条件分科会労災保険部会資料",
       "pubDate": "2026-09-07T17:02:00+09:00",
       "link": "https://www.mhlw.go.jp/stf/newpage_76056.html",
-      "source": "mhlw"
-    },
-    {
-      "title": "第２回 令和８年度医師の働き方改革の推進等に関する検討会：開催案内",
-      "pubDate": "2026-09-07T14:00:00+09:00",
-      "link": "https://www.mhlw.go.jp/stf/newpage_75971.html",
       "source": "mhlw"
     }
   ]
