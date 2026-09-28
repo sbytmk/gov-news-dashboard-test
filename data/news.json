@@ -1,7 +1,13 @@
 {
-  "updatedAt": "2026-09-28T08:32:37.080702+09:00",
+  "updatedAt": "2026-09-28T18:30:21.525113+09:00",
   "count": 8,
   "items": [
+    {
+      "title": "第132回労働政策審議会労働条件分科会労災保険部会資料",
+      "pubDate": "2026-09-28T16:02:00+09:00",
+      "link": "https://www.mhlw.go.jp/stf/newpage_76405.html",
+      "source": "mhlw"
+    },
     {
       "title": "「第94回 労働政策審議会勤労者生活分科会中小企業退職金共済部会」を開催します（開催案内）",
       "pubDate": "2026-09-24T14:00:00+09:00",
@@ -42,12 +48,6 @@
       "title": "第14回ASEAN+3労働大臣会合",
       "pubDate": "2026-09-15T10:00:00+09:00",
       "link": "https://www.mhlw.go.jp/stf/photo_report/2026/ph0827-01.html",
-      "source": "mhlw"
-    },
-    {
-      "title": "「食品衛生監視部会伝達性海綿状脳症対策に関する小委員会」の開催について",
-      "pubDate": "2026-09-11T14:00:00+09:00",
-      "link": "https://www.mhlw.go.jp/stf/other-kenkou_128610_00042.html",
       "source": "mhlw"
     }
   ]
