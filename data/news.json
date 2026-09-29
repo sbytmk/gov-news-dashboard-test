@@ -1,7 +1,19 @@
 {
-  "updatedAt": "2026-09-29T09:47:00.028366+09:00",
-  "count": 8,
+  "updatedAt": "2026-09-29T18:34:22.499130+09:00",
+  "count": 9,
   "items": [
+    {
+      "title": "労働災害発生状況",
+      "pubDate": "2026-09-29T14:00:00+09:00",
+      "link": "https://www.mhlw.go.jp/bunya/roudoukijun/anzeneisei11/rousai-hassei/index.html",
+      "source": "mhlw"
+    },
+    {
+      "title": "インフルエンザの発生状況を更新しました",
+      "pubDate": "2026-09-29T13:55:00+09:00",
+      "link": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/kenkou/kekkaku-kansenshou01/houdou.html",
+      "source": "mhlw"
+    },
     {
       "title": "第132回労働政策審議会労働条件分科会労災保険部会資料",
       "pubDate": "2026-09-28T16:02:00+09:00",
@@ -30,12 +42,6 @@
       "title": "毎年10月は中小企業退職金共済制度の「加入促進強化月間」です",
       "pubDate": "2026-09-18T14:00:00+09:00",
       "link": "https://www.mhlw.go.jp/stf/newpage_76152.html",
-      "source": "mhlw"
-    },
-    {
-      "title": "インフルエンザの発生状況を更新しました",
-      "pubDate": "2026-09-18T13:55:00+09:00",
-      "link": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/kenkou/kekkaku-kansenshou01/houdou.html",
       "source": "mhlw"
     },
     {
