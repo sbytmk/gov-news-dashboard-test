@@ -1,7 +1,13 @@
 {
-  "updatedAt": "2026-10-02T09:26:29.955608+09:00",
+  "updatedAt": "2026-10-02T18:29:35.855515+09:00",
   "count": 9,
   "items": [
+    {
+      "title": "インフルエンザの発生状況を更新しました",
+      "pubDate": "2026-10-02T13:55:00+09:00",
+      "link": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/kenkou/kekkaku-kansenshou01/houdou.html",
+      "source": "mhlw"
+    },
     {
       "title": "「令和８年度 第１回 薬事審議会 化学物質安全対策部会 家庭用品安全対策調査会」 を開催します（開催案内）",
       "pubDate": "2026-10-01T14:00:00+09:00",
@@ -18,12 +24,6 @@
       "title": "労働災害発生状況",
       "pubDate": "2026-09-29T14:00:00+09:00",
       "link": "https://www.mhlw.go.jp/bunya/roudoukijun/anzeneisei11/rousai-hassei/index.html",
-      "source": "mhlw"
-    },
-    {
-      "title": "インフルエンザの発生状況を更新しました",
-      "pubDate": "2026-09-29T13:55:00+09:00",
-      "link": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/kenkou/kekkaku-kansenshou01/houdou.html",
       "source": "mhlw"
     },
     {
