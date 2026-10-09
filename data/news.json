@@ -1,7 +1,13 @@
 {
-  "updatedAt": "2026-10-08T19:11:52.080047+09:00",
+  "updatedAt": "2026-10-09T09:55:36.599266+09:00",
   "count": 10,
   "items": [
+    {
+      "title": "第133回労働政策審議会労働条件分科会労災保険部会資料",
+      "pubDate": "2026-10-08T19:05:00+09:00",
+      "link": "https://www.mhlw.go.jp/stf/newpage_76665.html",
+      "source": "mhlw"
+    },
     {
       "title": "令和８年度「食品衛生事業功労者厚生労働大臣表彰」の受賞者の決定について",
       "pubDate": "2026-10-08T14:00:00+09:00",
@@ -54,12 +60,6 @@
       "title": "第132回労働政策審議会労働条件分科会労災保険部会資料",
       "pubDate": "2026-09-28T16:02:00+09:00",
       "link": "https://www.mhlw.go.jp/stf/newpage_76405.html",
-      "source": "mhlw"
-    },
-    {
-      "title": "「第94回 労働政策審議会勤労者生活分科会中小企業退職金共済部会」を開催します（開催案内）",
-      "pubDate": "2026-09-24T14:00:00+09:00",
-      "link": "https://www.mhlw.go.jp/stf/newpage_76251.html",
       "source": "mhlw"
     }
   ]
