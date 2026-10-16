@@ -1,7 +1,25 @@
 {
-  "updatedAt": "2026-10-16T08:30:02.856189+09:00",
+  "updatedAt": "2026-10-16T16:58:39.523857+09:00",
   "count": 10,
   "items": [
+    {
+      "title": "中央最低賃金審議会(目安制度の在り方に関する全員協議会)",
+      "pubDate": "2026-10-16T14:00:00+09:00",
+      "link": "https://www.mhlw.go.jp/stf/shingi/shingi-tingin_127940.html",
+      "source": "mhlw"
+    },
+    {
+      "title": "中央最低賃金審議会 (中央最低賃金審議会)",
+      "pubDate": "2026-10-16T14:00:00+09:00",
+      "link": "https://www.mhlw.go.jp/stf/shingi/shingi-tingin_127939.html",
+      "source": "mhlw"
+    },
+    {
+      "title": "インフルエンザの発生状況を更新しました",
+      "pubDate": "2026-10-16T13:55:00+09:00",
+      "link": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/kenkou/kekkaku-kansenshou01/houdou.html",
+      "source": "mhlw"
+    },
     {
       "title": "令和８年熊本地震に伴う産業雇用安定助成金の特例を実施します",
       "pubDate": "2026-10-15T16:00:00+09:00",
@@ -27,18 +45,6 @@
       "source": "mhlw"
     },
     {
-      "title": "令和８年度（令和７年度からの繰越分）医療施設等施設整備費補助金の交付額の３回目内示について（２次募集分）",
-      "pubDate": "2026-10-09T17:00:00+09:00",
-      "link": "https://www.mhlw.go.jp/stf/newpage_76647.html",
-      "source": "mhlw"
-    },
-    {
-      "title": "インフルエンザの発生状況を更新しました",
-      "pubDate": "2026-10-09T13:55:00+09:00",
-      "link": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/kenkou/kekkaku-kansenshou01/houdou.html",
-      "source": "mhlw"
-    },
-    {
       "title": "令和８年度「食品衛生事業功労者厚生労働大臣表彰」の受賞者の決定について",
       "pubDate": "2026-10-08T14:00:00+09:00",
       "link": "https://www.mhlw.go.jp/stf/newpage_76332.html",
@@ -54,12 +60,6 @@
       "title": "厚生科学審議会 (新型インフルエンザ対策に関する小委員会)",
       "pubDate": "2026-10-07T14:49:00+09:00",
       "link": "https://www.mhlw.go.jp/stf/shingi/shingi-kousei_263447_00003.html",
-      "source": "mhlw"
-    },
-    {
-      "title": "令和８年度第６回化学物質管理に係る専門家検討会を開催します",
-      "pubDate": "2026-10-06T14:00:00+09:00",
-      "link": "https://www.mhlw.go.jp/stf/newpage_76576.html",
       "source": "mhlw"
     }
   ]
