@@ -1,7 +1,13 @@
 {
-  "updatedAt": "2026-10-23T08:49:17.960588+09:00",
+  "updatedAt": "2026-10-23T17:20:23.231430+09:00",
   "count": 9,
   "items": [
+    {
+      "title": "インフルエンザの発生状況を更新しました",
+      "pubDate": "2026-10-23T13:55:00+09:00",
+      "link": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/kenkou/kekkaku-kansenshou01/houdou.html",
+      "source": "mhlw"
+    },
     {
       "title": "令和８年労働安全衛生調査（実態調査）にご協力をお願いします",
       "pubDate": "2026-10-19T10:00:00+09:00",
@@ -18,12 +24,6 @@
       "title": "中央最低賃金審議会 (中央最低賃金審議会)",
       "pubDate": "2026-10-16T14:00:00+09:00",
       "link": "https://www.mhlw.go.jp/stf/shingi/shingi-tingin_127939.html",
-      "source": "mhlw"
-    },
-    {
-      "title": "インフルエンザの発生状況を更新しました",
-      "pubDate": "2026-10-16T13:55:00+09:00",
-      "link": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/kenkou/kekkaku-kansenshou01/houdou.html",
       "source": "mhlw"
     },
     {
