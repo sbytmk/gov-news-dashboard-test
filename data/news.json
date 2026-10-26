@@ -1,7 +1,13 @@
 {
-  "updatedAt": "2026-10-26T07:59:25.612980+09:00",
+  "updatedAt": "2026-10-26T17:38:41.447760+09:00",
   "count": 9,
   "items": [
+    {
+      "title": "第３回 令和８年度医師の働き方改革の推進等に関する検討会：開催案内",
+      "pubDate": "2026-10-26T14:00:00+09:00",
+      "link": "https://www.mhlw.go.jp/stf/newpage_76922.html",
+      "source": "mhlw"
+    },
     {
       "title": "インフルエンザの発生状況を更新しました",
       "pubDate": "2026-10-23T13:55:00+09:00",
@@ -48,12 +54,6 @@
       "title": "第24回 ASEAN・日本社会保障ハイレベル会合（開催案内）",
       "pubDate": "2026-10-13T14:00:00+09:00",
       "link": "https://www.mhlw.go.jp/stf/aseanjapan_highlevelofficialsmeeting24.html",
-      "source": "mhlw"
-    },
-    {
-      "title": "令和８年度（令和７年度からの繰越分）医療施設等施設整備費補助金の交付額の３回目内示について（２次募集分）",
-      "pubDate": "2026-10-09T17:00:00+09:00",
-      "link": "https://www.mhlw.go.jp/stf/newpage_76647.html",
       "source": "mhlw"
     }
   ]
