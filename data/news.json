@@ -1,7 +1,13 @@
 {
-  "updatedAt": "2026-10-28T09:12:30.852182+09:00",
-  "count": 9,
+  "updatedAt": "2026-10-28T18:25:13.329438+09:00",
+  "count": 7,
   "items": [
+    {
+      "title": "労働災害発生状況",
+      "pubDate": "2026-10-28T14:00:00+09:00",
+      "link": "https://www.mhlw.go.jp/bunya/roudoukijun/anzeneisei11/rousai-hassei/index.html",
+      "source": "mhlw"
+    },
     {
       "title": "第３回 令和８年度医師の働き方改革の推進等に関する検討会：開催案内",
       "pubDate": "2026-10-26T14:00:00+09:00",
@@ -36,24 +42,6 @@
       "title": "令和８年熊本地震に伴う産業雇用安定助成金の特例を実施します",
       "pubDate": "2026-10-15T16:00:00+09:00",
       "link": "https://www.mhlw.go.jp/stf/newpage_76532.html",
-      "source": "mhlw"
-    },
-    {
-      "title": "第133回労働政策審議会労働条件分科会労災保険部会資料",
-      "pubDate": "2026-10-13T17:42:00+09:00",
-      "link": "https://www.mhlw.go.jp/stf/newpage_76698.html",
-      "source": "mhlw"
-    },
-    {
-      "title": "第２７回新型インフルエンザ対策に関する小委員会 第１２回危機対応医薬品等に関する小委員会 資料",
-      "pubDate": "2026-10-13T15:17:00+09:00",
-      "link": "https://www.mhlw.go.jp/stf/newpage_76692.html",
-      "source": "mhlw"
-    },
-    {
-      "title": "第24回 ASEAN・日本社会保障ハイレベル会合（開催案内）",
-      "pubDate": "2026-10-13T14:00:00+09:00",
-      "link": "https://www.mhlw.go.jp/stf/aseanjapan_highlevelofficialsmeeting24.html",
       "source": "mhlw"
     }
   ]
