@@ -1,7 +1,43 @@
 {
-  "updatedAt": "2026-10-30T09:32:36.187413+09:00",
-  "count": 6,
+  "updatedAt": "2026-10-30T18:44:02.340628+09:00",
+  "count": 10,
   "items": [
+    {
+      "title": "不正アクセスによる情報漏えい等の事案を踏まえたセキュリティ対策の徹底について（注意喚起）",
+      "pubDate": "2026-10-30T18:59:00+09:00",
+      "link": "https://www.mhlw.go.jp/stf/kinkyu/20261030.html",
+      "source": "mhlw"
+    },
+    {
+      "title": "中央最低賃金審議会 (目安に関する小委員会)",
+      "pubDate": "2026-10-30T17:30:00+09:00",
+      "link": "https://www.mhlw.go.jp/stf/shingi/shingi-tingin_127941.html",
+      "source": "mhlw"
+    },
+    {
+      "title": "中央最低賃金審議会 (中央最低賃金審議会)",
+      "pubDate": "2026-10-30T17:30:00+09:00",
+      "link": "https://www.mhlw.go.jp/stf/shingi/shingi-tingin_127939.html",
+      "source": "mhlw"
+    },
+    {
+      "title": "輸入食品に対する検査命令の実施 - （中国産おくら、その加工品）",
+      "pubDate": "2026-10-30T16:00:00+09:00",
+      "link": "https://www.mhlw.go.jp/stf/newpage_77091.html",
+      "source": "mhlw"
+    },
+    {
+      "title": "「第14回厚生科学審議会食品衛生監視部会」の開催について",
+      "pubDate": "2026-10-30T14:00:00+09:00",
+      "link": "https://www.mhlw.go.jp/stf/newpage_76613.html",
+      "source": "mhlw"
+    },
+    {
+      "title": "インフルエンザの発生状況を更新しました",
+      "pubDate": "2026-10-30T13:55:00+09:00",
+      "link": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/kenkou/kekkaku-kansenshou01/houdou.html",
+      "source": "mhlw"
+    },
     {
       "title": "労働災害発生状況",
       "pubDate": "2026-10-28T14:00:00+09:00",
@@ -15,27 +51,15 @@
       "source": "mhlw"
     },
     {
-      "title": "インフルエンザの発生状況を更新しました",
-      "pubDate": "2026-10-23T13:55:00+09:00",
-      "link": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/kenkou/kekkaku-kansenshou01/houdou.html",
+      "title": "中東情勢関連対策ワンストップポータル",
+      "pubDate": "2026-10-25T14:20:00+09:00",
+      "link": "https://www.mhlw.go.jp/stf/chuto-josei.html",
       "source": "mhlw"
     },
     {
       "title": "令和８年労働安全衛生調査（実態調査）にご協力をお願いします",
       "pubDate": "2026-10-19T10:00:00+09:00",
       "link": "https://www.mhlw.go.jp/toukei/oshirase/261014.html",
-      "source": "mhlw"
-    },
-    {
-      "title": "中央最低賃金審議会(目安制度の在り方に関する全員協議会)",
-      "pubDate": "2026-10-16T14:00:00+09:00",
-      "link": "https://www.mhlw.go.jp/stf/shingi/shingi-tingin_127940.html",
-      "source": "mhlw"
-    },
-    {
-      "title": "中央最低賃金審議会 (中央最低賃金審議会)",
-      "pubDate": "2026-10-16T14:00:00+09:00",
-      "link": "https://www.mhlw.go.jp/stf/shingi/shingi-tingin_127939.html",
       "source": "mhlw"
     }
   ]
