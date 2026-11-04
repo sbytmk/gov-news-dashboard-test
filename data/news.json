@@ -1,7 +1,13 @@
 {
-  "updatedAt": "2026-11-04T09:59:50.874841+09:00",
+  "updatedAt": "2026-11-04T19:37:33.433771+09:00",
   "count": 10,
   "items": [
+    {
+      "title": "令和８年度第７回化学物質管理に係る専門家検討会を開催します",
+      "pubDate": "2026-11-04T14:00:00+09:00",
+      "link": "https://www.mhlw.go.jp/stf/newpage_77017.html",
+      "source": "mhlw"
+    },
     {
       "title": "不正アクセスによる情報漏えい等の事案を踏まえたセキュリティ対策の徹底について（注意喚起）",
       "pubDate": "2026-10-30T18:59:00+09:00",
@@ -54,12 +60,6 @@
       "title": "中東情勢関連対策ワンストップポータル",
       "pubDate": "2026-10-25T14:20:00+09:00",
       "link": "https://www.mhlw.go.jp/stf/chuto-josei.html",
-      "source": "mhlw"
-    },
-    {
-      "title": "令和８年度第７回薬事審議会化学物質安全対策部会化学物質調査会",
-      "pubDate": "2026-10-22T14:15:00+09:00",
-      "link": "https://www.mhlw.go.jp/stf/newpage_76907.html",
       "source": "mhlw"
     }
   ]
