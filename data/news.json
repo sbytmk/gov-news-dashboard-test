@@ -1,7 +1,13 @@
 {
-  "updatedAt": "2026-11-20T10:58:54.421168+09:00",
+  "updatedAt": "2026-11-20T20:02:47.806374+09:00",
   "count": 9,
   "items": [
+    {
+      "title": "インフルエンザの発生状況を更新しました",
+      "pubDate": "2026-11-20T13:55:00+09:00",
+      "link": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/kenkou/kekkaku-kansenshou01/houdou.html",
+      "source": "mhlw"
+    },
     {
       "title": "医薬品安定供給・流通確認システムへの不正アクセスに係る 個人情報の漏えいについて",
       "pubDate": "2026-11-18T16:30:00+09:00",
@@ -30,12 +36,6 @@
       "title": "令和８年度医療施設等施設整備費補助金の交付額の内示について （4回目内示）",
       "pubDate": "2026-11-16T16:00:00+09:00",
       "link": "https://www.mhlw.go.jp/stf/newpage_77272.html",
-      "source": "mhlw"
-    },
-    {
-      "title": "インフルエンザの発生状況を更新しました",
-      "pubDate": "2026-11-13T13:55:00+09:00",
-      "link": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/kenkou/kekkaku-kansenshou01/houdou.html",
       "source": "mhlw"
     },
     {
